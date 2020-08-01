@@ -21,6 +21,7 @@ Pod::Spec.new do |s|
       LICENSE
   }
   s.platform     = :ios
+  s.swift_versions = '5.0'
   s.ios.deployment_target = '9.0'
   s.author       = { "zhongfan" => "fan.zhong@duobei.com" }
   s.source       = { :git => "https://github.com/duobeiyun/DbyGmsDemo_OC.git", :tag => "#{s.version}" }
