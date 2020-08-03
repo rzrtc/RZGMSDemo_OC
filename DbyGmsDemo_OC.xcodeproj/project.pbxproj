@@ -15,6 +15,8 @@
 		45A4434524D5509B00B06B50 /* DBYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4434124D5509B00B06B50 /* DBYViewController.m */; };
 		45A4434624D5509B00B06B50 /* DBYTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45A4434224D5509B00B06B50 /* DBYTableViewCell.xib */; };
 		45A4434724D5509B00B06B50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A4434324D5509B00B06B50 /* Main.storyboard */; };
+		45A4434C24D7BA9300B06B50 /* NSDate+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4434924D7BA9300B06B50 /* NSDate+Util.m */; };
+		45A4434D24D7BA9300B06B50 /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4434A24D7BA9300B06B50 /* NSString+Util.m */; };
 		FEE4F145B49834F010BB262A /* Pods_DbyGmsDemo_OC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFAE21384B027A303B5A6E4F /* Pods_DbyGmsDemo_OC.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,10 @@
 		45A4434124D5509B00B06B50 /* DBYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBYViewController.m; sourceTree = "<group>"; };
 		45A4434224D5509B00B06B50 /* DBYTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DBYTableViewCell.xib; sourceTree = "<group>"; };
 		45A4434324D5509B00B06B50 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		45A4434824D7BA9300B06B50 /* NSString+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Util.h"; sourceTree = "<group>"; };
+		45A4434924D7BA9300B06B50 /* NSDate+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Util.m"; sourceTree = "<group>"; };
+		45A4434A24D7BA9300B06B50 /* NSString+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Util.m"; sourceTree = "<group>"; };
+		45A4434B24D7BA9300B06B50 /* NSDate+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Util.h"; sourceTree = "<group>"; };
 		A6EFE52D1FC0DE88785A7374 /* Pods-DbyGmsDemo_OC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DbyGmsDemo_OC.debug.xcconfig"; path = "Target Support Files/Pods-DbyGmsDemo_OC/Pods-DbyGmsDemo_OC.debug.xcconfig"; sourceTree = "<group>"; };
 		B9D47A545FF29DD37D52C0DB /* Pods-DbyGmsDemo_OC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DbyGmsDemo_OC.release.xcconfig"; path = "Target Support Files/Pods-DbyGmsDemo_OC/Pods-DbyGmsDemo_OC.release.xcconfig"; sourceTree = "<group>"; };
 		BFAE21384B027A303B5A6E4F /* Pods_DbyGmsDemo_OC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DbyGmsDemo_OC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +84,7 @@
 		45A4432424D5504900B06B50 /* DbyGmsDemo_OC */ = {
 			isa = PBXGroup;
 			children = (
+				45A4434E24D7BA9B00B06B50 /* Catagory */,
 				45A4434324D5509B00B06B50 /* Main.storyboard */,
 				45A4433F24D5509B00B06B50 /* DBYViewController.h */,
 				45A4434124D5509B00B06B50 /* DBYViewController.m */,
@@ -92,6 +99,17 @@
 				45A4433724D5504C00B06B50 /* main.m */,
 			);
 			path = DbyGmsDemo_OC;
+			sourceTree = "<group>";
+		};
+		45A4434E24D7BA9B00B06B50 /* Catagory */ = {
+			isa = PBXGroup;
+			children = (
+				45A4434B24D7BA9300B06B50 /* NSDate+Util.h */,
+				45A4434924D7BA9300B06B50 /* NSDate+Util.m */,
+				45A4434824D7BA9300B06B50 /* NSString+Util.h */,
+				45A4434A24D7BA9300B06B50 /* NSString+Util.m */,
+			);
+			path = Catagory;
 			sourceTree = "<group>";
 		};
 		FA31557563FC41F0AE9070B0 /* Pods */ = {
@@ -219,7 +237,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				45A4434524D5509B00B06B50 /* DBYViewController.m in Sources */,
+				45A4434D24D7BA9300B06B50 /* NSString+Util.m in Sources */,
 				45A4432724D5504900B06B50 /* AppDelegate.m in Sources */,
+				45A4434C24D7BA9300B06B50 /* NSDate+Util.m in Sources */,
 				45A4434424D5509B00B06B50 /* DBYTableViewCell.m in Sources */,
 				45A4433824D5504C00B06B50 /* main.m in Sources */,
 			);

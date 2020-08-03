@@ -9,6 +9,7 @@
 #import "DBYViewController.h"
 #import <DbyGms/DbyGmsKit.h>
 #import "DBYTableViewCell.h"
+#import "NSString+Util.h"
 
 
 @interface DBYViewController () <DbyGmsDelegate, UITableViewDelegate, UITableViewDataSource, DbyGmsChannelDelegate>
@@ -53,7 +54,8 @@
     [_peerTableView registerNib:[UINib nibWithNibName:@"DBYTableViewCell" bundle:nil] forCellReuseIdentifier:@"DBYTableViewCell"];
 
     //换成你自己的appid
-    _dbyGmsKit = [[DbyGmsKit alloc] initWithAppId:@"123" delegate:self];
+    NSString *appId = @"appId";
+    _dbyGmsKit = [[DbyGmsKit alloc] initWithAppId:appId delegate:self];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardChange:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardChange:) name:UIKeyboardWillHideNotification object:nil];
@@ -75,9 +77,16 @@
     if (!uid.length) {
         return;
     }
-    NSString *token = @"dbyInternalTest"; //换成自己的token
+    
     NSDate *date = [NSDate date];
     int64_t ts = (int64_t)(date.timeIntervalSince1970 * 1000);
+    //换成自己的appId
+    NSString *appId = @"appId";
+    //换成自己的appKey
+    NSString *appKey = @"appKey";
+    //计算token
+    NSString *tokenStr = [NSString stringWithFormat:@"appId=%@&timestamp=%lld&userId=%@%@", appId, ts, uid, appKey];
+    NSString *token = [tokenStr md5Value];
     [self.dbyGmsKit loginByToken:token timeStamp:ts userId:uid completion:^(DbyGmsLoginErrorCode errorCode) {
         if (errorCode == DbyGmsLoginErrorOk) {
             self.connectButton.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:0.5];

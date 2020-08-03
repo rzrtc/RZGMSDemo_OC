@@ -11,29 +11,26 @@
 @import SocketIO;
 
 @class DbyGmsSocketManager;
+@class DbyGmsInvitationKit;
+@class DbyGmsInvitation;
 
+NS_ASSUME_NONNULL_BEGIN
 
 typedef void (^DbyGmsInvitationSendBlock)(DbyGmsInvitationApiCallErrorCode errorCode);
 typedef void (^DbyGmsInvitationAcceptBlock)(DbyGmsInvitationApiCallErrorCode errorCode);
 typedef void (^DbyGmsInvitationRefuseBlock)(DbyGmsInvitationApiCallErrorCode errorCode);
 typedef void (^DbyGmsInvitationCancelBlock)(DbyGmsInvitationApiCallErrorCode errorCode);
 
-
-@class DbyGmsInvitationKit;
-@class DbyGmsInvitation;
-
 @protocol DbyGmsInvitationDelegate <NSObject>
 
 @optional
-- (void)gmsInvitationKit:(DbyGmsInvitationKit *_Nonnull)invitationKit invitationFailed:(DbyGmsInvitation *_Nonnull)invitation;
-- (void)gmsInvitationKit:(DbyGmsInvitationKit *_Nonnull)invitationKit invitationArrived:(DbyGmsInvitation *_Nonnull)invitation;
-- (void)gmsInvitationKit:(DbyGmsInvitationKit *_Nonnull)invitationKit invitationCanceled:(DbyGmsInvitation *_Nonnull)invitation;
-- (void)gmsInvitationKit:(DbyGmsInvitationKit *_Nonnull)invitationKit invitationAccept:(DbyGmsInvitation *_Nonnull)invitation;
-- (void)gmsInvitationKit:(DbyGmsInvitationKit *_Nonnull)invitationKit invitationRefused:(DbyGmsInvitation *_Nonnull)invitation;
+- (void)gmsInvitationKit:(DbyGmsInvitationKit *)invitationKit invitationFailed:(DbyGmsInvitation *)invitation;
+- (void)gmsInvitationKit:(DbyGmsInvitationKit *)invitationKit invitationArrived:(DbyGmsInvitation *)invitation;
+- (void)gmsInvitationKit:(DbyGmsInvitationKit *)invitationKit invitationCanceled:(DbyGmsInvitation *)invitation;
+- (void)gmsInvitationKit:(DbyGmsInvitationKit *)invitationKit invitationAccept:(DbyGmsInvitation *)invitation;
+- (void)gmsInvitationKit:(DbyGmsInvitationKit *)invitationKit invitationRefused:(DbyGmsInvitation *)invitation;
 
 @end
-
-NS_ASSUME_NONNULL_BEGIN
 
 
 @interface DbyGmsInvitation: NSObject
@@ -41,11 +38,11 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  User ID of the Invitationer.
  */
-@property (nonatomic, copy, nonnull) NSString *inviter;
+@property (nonatomic, copy) NSString *inviter;
 /**
  User ID of the Invitationee.
  */
-@property (nonatomic, copy, nonnull) NSString *invitee;
+@property (nonatomic, copy) NSString *invitee;
 
 /**
  The Invitation invitation content set by the Invitationer.
@@ -61,7 +58,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, assign) DbyGmsInvitationState state;
 
-- (instancetype _Nonnull)initWithInviter:(NSString *)inviter invitee:(NSString *)invitee;
+- (instancetype)initWithInviter:(NSString *)inviter invitee:(NSString *)invitee;
 
 @end
 
@@ -72,11 +69,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithSocketManager:(DbyGmsSocketManager *)manager;
 
-- (void)sendInvitation:(DbyGmsInvitation *_Nonnull)invitation completion:(DbyGmsInvitationSendBlock _Nullable)completion;
-- (void)cancelInvitation:(DbyGmsInvitation *_Nonnull)invitation completion:(DbyGmsInvitationCancelBlock _Nullable)completion;
+- (void)sendInvitation:(DbyGmsInvitation *)invitation completion:(DbyGmsInvitationSendBlock)completion;
+- (void)cancelInvitation:(DbyGmsInvitation *)invitation completion:(DbyGmsInvitationCancelBlock)completion;
 
-- (void)acceptInvitation:(DbyGmsInvitation *_Nonnull)invitation completion:(DbyGmsInvitationAcceptBlock _Nullable)completion;
-- (void)refuseInvitation:(DbyGmsInvitation *_Nonnull)invitation completion:(DbyGmsInvitationRefuseBlock _Nullable)completion;
+- (void)acceptInvitation:(DbyGmsInvitation *)invitation completion:(DbyGmsInvitationAcceptBlock)completion;
+- (void)refuseInvitation:(DbyGmsInvitation *)invitation completion:(DbyGmsInvitationRefuseBlock)completion;
 
 @end
 

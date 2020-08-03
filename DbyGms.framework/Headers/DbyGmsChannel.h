@@ -14,8 +14,15 @@
 @class DbyGmsChannel;
 @class DbyGmsAttribute;
 
-@protocol DbyGmsChannelDelegate <NSObject>
+NS_ASSUME_NONNULL_BEGIN
 
+typedef void (^DbyGmsJoinChannelBlock)(DbyGmsJoinChannelErrorCode errorCode);
+typedef void (^DbyGmsLeaveChannelBlock)(DbyGmsLeaveChannelErrorCode errorCode);
+typedef void (^DbyGmsGetMembersBlock)(NSArray<DbyGmsMember *> *_Nullable members, DbyGmsGetMembersErrorCode errorCode);
+typedef void (^DbyGmsSendChannelMessageBlock)(DbyGmsSendChannelMessageErrorCode errorCode);
+
+
+@protocol DbyGmsChannelDelegate <NSObject>
 @optional
 
 /**
@@ -30,7 +37,7 @@
  @param channel The channel that the user joins. See DbyGmsChannel.
  @param member The user joining the channel. See DbyGmsMember.
  */
-- (void)channel:(DbyGmsChannel * _Nonnull)channel memberJoined:(DbyGmsMember * _Nonnull)member;
+- (void)channel:(DbyGmsChannel *)channel memberJoined:(DbyGmsMember *)member;
 
 /**
  Occurs when a channel member leaves the channel.
@@ -44,7 +51,7 @@
  @param channel The channel that the user leaves. See DbyGmsChannel.
  @param member The channel member that leaves the channel. See DbyGmsMember.
  */
-- (void)channel:(DbyGmsChannel * _Nonnull)channel memberLeft:(DbyGmsMember * _Nonnull)member;
+- (void)channel:(DbyGmsChannel *)channel memberLeft:(DbyGmsMember *)member;
 
 /**
  Occurs when receiving a channel message.
@@ -55,7 +62,7 @@
  @param message The received channel message. See DbyGmsMessage. Ensure that you check the `type` property when receiving the message instance: If the message type is `DbyGmsMessageTypeRaw`, you need to downcast the received instance from DbyGmsMessage to DbyGmsRawMessage. See DbyGmsMessageType.
  @param member The message sender. See DbyGmsMember.
  */
-- (void)channel:(DbyGmsChannel * _Nonnull)channel messageReceived:(DbyGmsMessage * _Nonnull)message fromMember:(DbyGmsMember * _Nonnull)member;
+- (void)channel:(DbyGmsChannel *)channel messageReceived:(DbyGmsMessage *)message fromMember:(DbyGmsMember * _Nonnull)member;
 
 /**
  Occurs when channel attributes are updated, and returns all attributes of the channel.
@@ -67,8 +74,7 @@
  @param channel The channel, to which the local user belongs. See DbyGmsChannel.
  @param attributes An array of DbyGmsChannelAttribute. See DbyGmsChannelAttribute.
  */
-- (void)channel:(DbyGmsChannel * _Nonnull)channel attributeUpdate:(NSArray< DbyGmsAttribute *> * _Nonnull)attributes;
-
+- (void)channel:(DbyGmsChannel *)channel attributeUpdate:(NSArray< DbyGmsAttribute *> *)attributes;
 
 /**
  Occurs when the number of the channel members changes, and returns the new number.
@@ -82,16 +88,10 @@
  @param channel The channel, to which the local user belongs. See DbyGmsChannel.
  @param count Member count of this channel.
  */
-- (void)channel:(DbyGmsChannel * _Nonnull)channel memberCount:(int)count;
+- (void)channel:(DbyGmsChannel *)channel memberCount:(int)count;
 
 @end
 
-typedef void (^DbyGmsJoinChannelBlock)(DbyGmsJoinChannelErrorCode errorCode);
-typedef void (^DbyGmsLeaveChannelBlock)(DbyGmsLeaveChannelErrorCode errorCode);
-typedef void (^DbyGmsGetMembersBlock)(NSArray<DbyGmsMember *> * _Nullable members, DbyGmsGetMembersErrorCode errorCode);
-typedef void (^DbyGmsSendChannelMessageBlock)(DbyGmsSendChannelMessageErrorCode errorCode);
-
-NS_ASSUME_NONNULL_BEGIN
 
 @class DbyGmsSocketManager;
 
@@ -102,13 +102,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithSocketManager:(DbyGmsSocketManager *)manager;
 
-- (void)joinWithCompletion:(DbyGmsJoinChannelBlock _Nullable)completionBlock;
+- (void)joinWithCompletion:(DbyGmsJoinChannelBlock)completionBlock;
 
-- (void)leaveWithCompletion:(DbyGmsLeaveChannelBlock _Nullable)completionBlock;
+- (void)leaveWithCompletion:(DbyGmsLeaveChannelBlock)completionBlock;
 
-- (void)sendMessage:(DbyGmsMessage *_Nonnull)message options:(DbyGmsSendMessageOptions *_Nonnull)options completion:(DbyGmsSendChannelMessageBlock _Nullable)completionBlock;
+- (void)sendMessage:(DbyGmsMessage *)message options:(DbyGmsSendMessageOptions *)options completion:(DbyGmsSendChannelMessageBlock)completionBlock;
 
-- (void)getMembersWithCompletion:(DbyGmsGetMembersBlock _Nullable)completionBlock;
+- (void)getMembersWithCompletion:(DbyGmsGetMembersBlock)completionBlock;
 
 @end
 

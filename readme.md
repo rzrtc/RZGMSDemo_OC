@@ -24,6 +24,18 @@ pod 'DbyGms'
 - [错误码和状态码](./docs/DbyGmsEnum.md)
 
 ## FAQ
+- `Unable to find a pod with name, author, summary, or description matching "DbyGms"`
+打开命令行工具，执行以下命令`rm -rf ~/Library/Caches/CocoaPods` `pod repo update`。
+
+- 登录遇到了问题
+请填写正确的appid和token。
+```objc
+[[DbyGmsKit alloc] initWithAppId:@"appid" delegate:self];
+[dbyGmsKit loginByToken:token timeStamp:ts userId:uid completion:completion];
+```
+
+- 如何计算token
+token 计算参考demo
 
 ## 注意事项
 

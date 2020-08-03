@@ -5,33 +5,28 @@
 //  Created by yxibng on 2020/5/6.
 //
 
-#import <Foundation/Foundation.h>
-#import "DbyGmsAttribute.h"
-#import "DbyGmsChannelAttributeOptions.h"
-#import "DbyGmsMessage.h"
-#import "DbyGmsSendMessageOptions.h"
 #import "DbyChannelMemberCount.h"
 #import "DbyEnumerates.h"
-#import "DbyGmsPeerOnlineStatus.h"
-#import "DbyGmsMember.h"
-#import "DbyGmsInvitationKit.h"
+#import "DbyGmsAttribute.h"
 #import "DbyGmsChannel.h"
-
-
-NS_ASSUME_NONNULL_BEGIN
+#import "DbyGmsChannelAttributeOptions.h"
+#import "DbyGmsInvitationKit.h"
+#import "DbyGmsMember.h"
+#import "DbyGmsMessage.h"
+#import "DbyGmsPeerOnlineStatus.h"
+#import "DbyGmsSendMessageOptions.h"
+#import <Foundation/Foundation.h>
 
 @class DbyGmsKit;
 
+NS_ASSUME_NONNULL_BEGIN
+
 typedef void (^DbyGmsLoginBlock)(DbyGmsLoginErrorCode errorCode);
 typedef void (^DbyGmsLogoutBlock)(DbyGmsLogoutErrorCode errorCode);
-/**
- Returns the result of the [sendMessage]([DbyGmsKit sendMessage:toPeer:completion:]) method call. Error code of sending the peer-to-peer message. See DbyGmsSendPeerMessageErrorCode.
- */
 typedef void (^DbyGmsSendPeerMessageBlock)(DbyGmsSendPeerMessageErrorCode errorCode);
-
-typedef void (^DbyChannelMemberCountBlock)(NSArray<DbyChannelMemberCount *> * _Nullable channelMemberCounts, DbyGmsChannelMemberCountErrorCode errorCode);
-typedef void (^DbyGmsQueryPeersOnlineBlock)(NSArray<DbyGmsPeerOnlineStatus *>  * _Nullable peerOnlineStatus, DbyGmsQueryPeersOnlineErrorCode errorCode);
-typedef void (^DbyGmsQueryPeersBySubscriptionOptionBlock)(NSArray<NSString *> * _Nullable peers, DbyGmsPeerSubscriptionStatusErrorCode errorCode);
+typedef void (^DbyChannelMemberCountBlock)(NSArray<DbyChannelMemberCount *> *_Nullable channelMemberCounts, DbyGmsChannelMemberCountErrorCode errorCode);
+typedef void (^DbyGmsQueryPeersOnlineBlock)(NSArray<DbyGmsPeerOnlineStatus *> *_Nullable peerOnlineStatus, DbyGmsQueryPeersOnlineErrorCode errorCode);
+typedef void (^DbyGmsQueryPeersBySubscriptionOptionBlock)(NSArray<NSString *> *_Nullable peers, DbyGmsPeerSubscriptionStatusErrorCode errorCode);
 
 #pragma mark - channel attributes -
 /**
@@ -55,7 +50,7 @@ typedef void (^DbyGmsClearChannelAttributesBlock)(DbyGmsProcessAttributeErrorCod
 /**
  Returns the result of the [getChannelAttributes]([DbyGmsKit getChannelAllAttributes:completion:]) or the [getChannelAttributesByKeys]([DbyGmsKit getChannelAttributes:ByKeys:completion:]) method call. <p><li><i>attributes:</i> An array of DbyGmsChannelAttibute. See DbyGmsChannelAttibute. <p><li><i>errorCode:</i> See DbyGmsProcessAttributeErrorCode.
  */
-typedef void (^DbyGmsGetChannelAttributesBlock)(NSArray< DbyGmsAttribute *> * _Nullable attributes, DbyGmsProcessAttributeErrorCode errorCode);
+typedef void (^DbyGmsGetChannelAttributesBlock)(NSArray<DbyGmsAttribute *> *_Nullable attributes, DbyGmsProcessAttributeErrorCode errorCode);
 
 #pragma mark - user attributes -
 /**
@@ -81,7 +76,7 @@ typedef void (^DbyGmsClearLocalUserAttributesBlock)(DbyGmsProcessAttributeErrorC
 /**
  Returns the result of the [getUserAttributes]([DbyGmsKit getUserAllAttributes:completion:]) or the [getUserAttributesByKeys]([DbyGmsKit getUserAttributes:ByKeys:completion:]) method call. <p><li><i>attributes:</i> An array of RtmAttibutes. See DbyGmsAttribute. <p><li><i>userId:</i> The User ID of the specified user. <p><li><i>errorCode:</i> See DbyGmsProcessAttributeErrorCode.
  */
-typedef void (^DbyGmsGetUserAttributesBlock)(NSArray< DbyGmsAttribute *> * _Nullable attributes, NSString * userId, DbyGmsProcessAttributeErrorCode errorCode);
+typedef void (^DbyGmsGetUserAttributesBlock)(NSArray<DbyGmsAttribute *> *_Nullable attributes, NSString *userId, DbyGmsProcessAttributeErrorCode errorCode);
 /**
  Returns the result of the [renewToken]([DbyGmsKit renewToken:completion:]) method call. <p><li><i>token</i> Your new Token. <li><i>errorCode:</i> See DbyGmsRenewTokenErrorCode.
  */
@@ -99,69 +94,65 @@ typedef void (^DbyGmsSubscriptionRequestBlock)(DbyGmsPeerSubscriptionStatusError
 @optional
 
 - (void)dbyGmsKit:(DbyGmsKit *)kit connectionStateChanged:(DbyGmsConnectionState)state reason:(DbyGmsConnectionChangeReason)reason;
-- (void)dbyGmsKit:(DbyGmsKit *)kit peersOnlineStatusChanged:(NSArray<DbyGmsPeerOnlineStatus *> *_Nonnull)onlineStatus;
+- (void)dbyGmsKit:(DbyGmsKit *)kit peersOnlineStatusChanged:(NSArray<DbyGmsPeerOnlineStatus *> *)onlineStatus;
 ///收到点对点消息
-- (void)dbyGmsKit:(DbyGmsKit *)kit messageReceived:(DbyGmsMessage *_Nonnull)message fromPeer:(NSString *_Nonnull)peerId;
+- (void)dbyGmsKit:(DbyGmsKit *)kit messageReceived:(DbyGmsMessage *)message fromPeer:(NSString *)peerId;
 ///收到呼叫邀请
-- (void)dbyGmsKit:(DbyGmsKit *)kit invitationReceived:(DbyGmsInvitation *_Nonnull)invitation fromPeer:(NSString *_Nonnull)peerId;
+- (void)dbyGmsKit:(DbyGmsKit *)kit invitationReceived:(DbyGmsInvitation *)invitation fromPeer:(NSString *)peerId;
 
 @end
-
 
 @interface DbyGmsKit : NSObject
 
 @property (nonatomic, weak) id<DbyGmsDelegate> delegate;
 
-- (instancetype)initWithAppId:(NSString *_Nonnull)appId delegate:(id<DbyGmsDelegate> _Nullable)delegate;
+- (instancetype)initWithAppId:(NSString *)appId delegate:(id<DbyGmsDelegate> _Nullable)delegate;
 
 #pragma mark - login
-- (void)loginByToken:(NSString *_Nonnull)token timeStamp:(NSTimeInterval)timeStamp userId:(NSString *)userId completion:(DbyGmsLoginBlock _Nullable)completionBlock;
-- (void)logoutWithCompletion:(DbyGmsLogoutBlock _Nullable)completionBlock;
-- (void)renewToken:(NSString *_Nonnull)token timeStamp:(NSTimeInterval)timeStamp completion:(DbyGmsRenewTokenBlock _Nullable)completionBlock;
+- (void)loginByToken:(NSString *)token timeStamp:(NSTimeInterval)timeStamp userId:(NSString *)userId completion:(DbyGmsLoginBlock)completionBlock;
+- (void)logoutWithCompletion:(DbyGmsLogoutBlock)completionBlock;
+- (void)renewToken:(NSString *)token timeStamp:(NSTimeInterval)timeStamp completion:(DbyGmsRenewTokenBlock)completionBlock;
 
 #pragma mark - channel
-- (DbyGmsChannel *_Nullable)createChannelWithId:(NSString *_Nonnull)channelId delegate:(id<DbyGmsChannelDelegate> _Nullable)delegate;
-- (BOOL)destroyChannelWithId:(NSString *_Nonnull)channelId;
-- (void)getChannelMemberCount:(NSArray<NSString *> *_Nonnull)channelIds completion:(DbyChannelMemberCountBlock _Nullable)completionBlock;
+- (DbyGmsChannel *_Nullable)createChannelWithId:(NSString *)channelId delegate:(id<DbyGmsChannelDelegate> _Nullable)delegate;
+- (BOOL)destroyChannelWithId:(NSString *)channelId;
+- (void)getChannelMemberCount:(NSArray<NSString *> *)channelIds completion:(DbyChannelMemberCountBlock)completionBlock;
 
 #pragma mark - channel attributes
-- (void)setChannel:(NSString *_Nonnull)channelId attributes:(NSArray<DbyGmsAttribute *> *_Nullable)attributes options:(DbyGmsChannelAttributeOptions *_Nonnull)options completion:(DbyGmsSetChannelAttributesBlock _Nullable)completionBlock;
-- (void)addOrUpdateChannel:(NSString *_Nonnull)channelId attributes:(NSArray<DbyGmsAttribute *> *_Nullable)attributes options:(DbyGmsChannelAttributeOptions *_Nonnull)options completion:(DbyGmsAddOrUpdateChannelAttributesBlock _Nullable)completionBlock;
-- (void)deleteChannelAttributes:(NSString *_Nonnull)channelId byKeys:(NSArray<NSString *> *_Nullable)attributeKeys options:(DbyGmsChannelAttributeOptions *_Nonnull)options completion:(DbyGmsDeleteChannelAttributesBlock _Nullable)completionBlock;
-- (void)clearChannelAttributes:(NSString *_Nonnull)channelId options:(DbyGmsChannelAttributeOptions *_Nonnull)options completion:(DbyGmsClearChannelAttributesBlock _Nullable)completionBlock;
-- (void)getChannelAttributes:(NSString *_Nonnull)channelId completion:(DbyGmsGetChannelAttributesBlock _Nullable)completionBlock;
-- (void)getChannelAttributes:(NSString *_Nonnull)channelId byKeys:(NSArray<NSString *> *_Nullable)attributeKeys completion:(DbyGmsGetChannelAttributesBlock _Nullable)completionBlock;
-
+- (void)setChannel:(NSString *)channelId attributes:(NSArray<DbyGmsAttribute *> *_Nullable)attributes options:(DbyGmsChannelAttributeOptions *)options completion:(DbyGmsSetChannelAttributesBlock)completionBlock;
+- (void)addOrUpdateChannel:(NSString *)channelId attributes:(NSArray<DbyGmsAttribute *> *_Nullable)attributes options:(DbyGmsChannelAttributeOptions *)options completion:(DbyGmsAddOrUpdateChannelAttributesBlock)completionBlock;
+- (void)deleteChannelAttributes:(NSString *)channelId byKeys:(NSArray<NSString *> *_Nullable)attributeKeys options:(DbyGmsChannelAttributeOptions *)options completion:(DbyGmsDeleteChannelAttributesBlock)completionBlock;
+- (void)clearChannelAttributes:(NSString *)channelId options:(DbyGmsChannelAttributeOptions *)options completion:(DbyGmsClearChannelAttributesBlock)completionBlock;
+- (void)getChannelAttributes:(NSString *)channelId completion:(DbyGmsGetChannelAttributesBlock)completionBlock;
+- (void)getChannelAttributes:(NSString *)channelId byKeys:(NSArray<NSString *> *_Nullable)attributeKeys completion:(DbyGmsGetChannelAttributesBlock)completionBlock;
 
 #pragma mark - user attributes
-- (void)setLocalUserAttributes:(NSArray<DbyGmsAttribute *> *_Nullable)attributes completion:(DbyGmsSetLocalUserAttributesBlock _Nullable)completionBlock;
-- (void)addOrUpdateLocalUserAttributes:(NSArray<DbyGmsAttribute *> *_Nullable)attributes completion:(DbyGmsAddOrUpdateLocalUserAttributesBlock _Nullable)completionBlock;
-- (void)deleteLocalUserAttributesByKeys:(NSArray<NSString *> *_Nullable)attributeKeys completion:(DbyGmsDeleteLocalUserAttributesBlock _Nullable)completionBlock;
-- (void)clearLocalUserAttributesWithCompletion:(DbyGmsClearLocalUserAttributesBlock _Nullable)completionBlock;
-- (void)getUserAttributes:(NSString *_Nonnull)userId byKeys:(NSArray<NSString*> *_Nullable)attributeKeys completion:(DbyGmsGetUserAttributesBlock _Nullable)completionBlock;
-- (void)getUserAttributes:(NSString *_Nonnull)userId completion:(DbyGmsGetUserAttributesBlock _Nullable)completionBlock;
-
+- (void)setLocalUserAttributes:(NSArray<DbyGmsAttribute *> *_Nullable)attributes completion:(DbyGmsSetLocalUserAttributesBlock)completionBlock;
+- (void)addOrUpdateLocalUserAttributes:(NSArray<DbyGmsAttribute *> *_Nullable)attributes completion:(DbyGmsAddOrUpdateLocalUserAttributesBlock)completionBlock;
+- (void)deleteLocalUserAttributesByKeys:(NSArray<NSString *> *_Nullable)attributeKeys completion:(DbyGmsDeleteLocalUserAttributesBlock)completionBlock;
+- (void)clearLocalUserAttributesWithCompletion:(DbyGmsClearLocalUserAttributesBlock)completionBlock;
+- (void)getUserAttributes:(NSString *)userId byKeys:(NSArray<NSString *> *_Nullable)attributeKeys completion:(DbyGmsGetUserAttributesBlock)completionBlock;
+- (void)getUserAttributes:(NSString *)userId completion:(DbyGmsGetUserAttributesBlock)completionBlock;
 
 #pragma mark - onlin status -
-- (void)subscribePeersOnlineStatus:(NSArray<NSString *> *_Nonnull)peerIds completion:(DbyGmsSubscriptionRequestBlock _Nullable)completionBlock;
-- (void)unsubscribePeersOnlineStatus:(NSArray<NSString *> *_Nonnull)peerIds completion:(DbyGmsSubscriptionRequestBlock _Nullable)completionBlock;
-- (void)queryPeersOnlineStatus:(NSArray<NSString *> *_Nonnull)peerIds completion:(DbyGmsQueryPeersOnlineBlock _Nullable)completionBlock;
-- (void)queryPeersBySubscriptionOption:(DbyGmsPeerSubscriptionOptions)option completion:(DbyGmsQueryPeersBySubscriptionOptionBlock _Nullable)completionBlock;
-
+- (void)subscribePeersOnlineStatus:(NSArray<NSString *> *)peerIds completion:(DbyGmsSubscriptionRequestBlock)completionBlock;
+- (void)unsubscribePeersOnlineStatus:(NSArray<NSString *> *)peerIds completion:(DbyGmsSubscriptionRequestBlock)completionBlock;
+- (void)queryPeersOnlineStatus:(NSArray<NSString *> *)peerIds completion:(DbyGmsQueryPeersOnlineBlock)completionBlock;
+- (void)queryPeersBySubscriptionOption:(DbyGmsPeerSubscriptionOptions)option completion:(DbyGmsQueryPeersBySubscriptionOptionBlock)completionBlock;
 
 #pragma mark - 呼叫邀请管理
 ///获取呼叫邀请实例，需要在登录后调用
 - (DbyGmsInvitationKit *)getGmsInvitationKit;
 
 #pragma mark - 点对点消息
-- (void)sendMessage:(DbyGmsMessage *_Nonnull)message
-             toPeer:(NSString *_Nonnull)peerId
- sendMessageOptions:(DbyGmsSendMessageOptions *_Nonnull)options
-         completion:(DbyGmsSendPeerMessageBlock _Nullable)completionBlock;
+- (void)sendMessage:(DbyGmsMessage *)message
+             toPeer:(NSString *)peerId
+ sendMessageOptions:(DbyGmsSendMessageOptions *)options
+         completion:(DbyGmsSendPeerMessageBlock)completionBlock;
 
 #pragma mark - 其他
-- (int)setParameters:(NSString *_Nonnull)parameters;
-- (void)setLogFile:(NSString *_Nonnull)logFile;
+- (int)setParameters:(NSString *)parameters;
+- (void)setLogFile:(NSString *)logFile;
 - (void)setLogFilters:(DbyGmsLogFilter)filter;
 + (NSString *)getSDKVersion;
 
