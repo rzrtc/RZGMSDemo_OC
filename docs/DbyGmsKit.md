@@ -197,7 +197,7 @@ description: "多贝云 Gms - iOS API 参考文档"
 
 ### connectionStateChanged
 连接状态变化通知
-```objc
+```objectivec
 - (void)dbyGmsKit:(DbyGmsKit *)kit connectionStateChanged:(DbyGmsConnectionState)state reason:(DbyGmsConnectionChangeReason)reason;
 ```
 |  参数   | 描述  |
@@ -208,7 +208,7 @@ description: "多贝云 Gms - iOS API 参考文档"
 
 ### peersOnlineStatusChanged
 用户状态变化通知
-```objc
+```objectivec
 - (void)dbyGmsKit:(DbyGmsKit *)kit peersOnlineStatusChanged:(NSArray<DbyGmsPeerOnlineStatus *> *_Nonnull)onlineStatus;
 ```
 |  参数   | 描述  |
@@ -218,7 +218,7 @@ description: "多贝云 Gms - iOS API 参考文档"
 
 ### messageReceived
 收到点对点消息
-```objc
+```objectivec
 - (void)dbyGmsKit:(DbyGmsKit *)kit messageReceived:(DbyGmsMessage *_Nonnull)message fromPeer:(NSString *_Nonnull)peerId;
 ```
 |  参数   | 描述  |
@@ -229,7 +229,7 @@ description: "多贝云 Gms - iOS API 参考文档"
 
 ### invitationReceived
 收到呼叫邀请
-```objc
+```objectivec
 - (void)dbyGmsKit:(DbyGmsKit *)kit invitationReceived:(DbyGmsInvitation *_Nonnull)invitation fromPeer:(NSString *_Nonnull)peerId;
 ```
 |  参数   | 描述  |
@@ -241,83 +241,83 @@ description: "多贝云 Gms - iOS API 参考文档"
 
 ## Block
 ### DbyGmsLoginBlock
-```objc
+```objectivec
 typedef void (^DbyGmsLoginBlock)(DbyGmsLoginErrorCode errorCode);
 ```
 
 ### DbyGmsLogoutBlock
-```objc
+```objectivec
 typedef void (^DbyGmsLogoutBlock)(DbyGmsLogoutErrorCode errorCode);
 ```
 ### DbyGmsSendPeerMessageBlock
-```objc
+```objectivec
 typedef void (^DbyGmsSendPeerMessageBlock)(DbyGmsSendPeerMessageErrorCode errorCode);
 ```
 ### DbyChannelMemberCountBlock
-```objc
+```objectivec
 typedef void (^DbyChannelMemberCountBlock)(NSArray<DbyChannelMemberCount *> * _Nullable channelMemberCounts, DbyGmsChannelMemberCountErrorCode errorCode);
 ```
 ### DbyGmsQueryPeersOnlineBlock
-```objc
+```objectivec
 typedef void (^DbyGmsQueryPeersOnlineBlock)(NSArray<DbyGmsPeerOnlineStatus *>  * _Nullable peerOnlineStatus, DbyGmsQueryPeersOnlineErrorCode errorCode);
 ```
 ### DbyGmsQueryPeersBySubscriptionOptionBlock
-```objc
+```objectivec
 typedef void (^DbyGmsQueryPeersBySubscriptionOptionBlock)(NSArray<NSString *> * _Nullable peers, DbyGmsPeerSubscriptionStatusErrorCode errorCode);
 ```
 ### DbyGmsSetChannelAttributesBlock
-```objc
+```objectivec
 typedef void (^DbyGmsSetChannelAttributesBlock)(DbyGmsProcessAttributeErrorCode errorCode);
 ```
 ### DbyGmsAddOrUpdateChannelAttributesBlock
-```objc
+```objectivec
 typedef void (^DbyGmsAddOrUpdateChannelAttributesBlock)(DbyGmsProcessAttributeErrorCode errorCode);
 ```
 ### DbyGmsDeleteChannelAttributesBlock
-```objc
+```objectivec
 typedef void (^DbyGmsDeleteChannelAttributesBlock)(DbyGmsProcessAttributeErrorCode errorCode);
 ```
 ### DbyGmsClearChannelAttributesBlock
-```objc
+```objectivec
 typedef void (^DbyGmsClearChannelAttributesBlock)(DbyGmsProcessAttributeErrorCode errorCode);
 ```
 
 ### DbyGmsGetChannelAttributesBlock
-```objc
+```objectivec
 typedef void (^DbyGmsGetChannelAttributesBlock)(NSArray< DbyGmsAttribute *> * _Nullable attributes, DbyGmsProcessAttributeErrorCode errorCode);
 ```
 
 ### DbyGmsSetLocalUserAttributesBlock
-```objc
+```objectivec
 typedef void (^DbyGmsSetLocalUserAttributesBlock)(DbyGmsProcessAttributeErrorCode errorCode);
 ```
 
 ### DbyGmsAddOrUpdateLocalUserAttributesBlock
-```objc
+```objectivec
 typedef void (^DbyGmsAddOrUpdateLocalUserAttributesBlock)(DbyGmsProcessAttributeErrorCode errorCode);
 ```
 
 ### DbyGmsDeleteLocalUserAttributesBlock
-```objc
+```objectivec
 typedef void (^DbyGmsDeleteLocalUserAttributesBlock)(DbyGmsProcessAttributeErrorCode errorCode);
 ```
 
 ### DbyGmsClearLocalUserAttributesBlock
-```objc
+```objectivec
 typedef void (^DbyGmsClearLocalUserAttributesBlock)(DbyGmsProcessAttributeErrorCode errorCode);
 ```
 
 ### DbyGmsGetUserAttributesBlock
-```objc
+```objectivec
 typedef void (^DbyGmsGetUserAttributesBlock)(NSArray< DbyGmsAttribute *> * _Nullable attributes, NSString * userId, DbyGmsProcessAttributeErrorCode errorCode);
 ```
 
 ### DbyGmsRenewTokenBlock
-```objc
+```objectivec
 typedef void (^DbyGmsRenewTokenBlock)(NSString *token, DbyGmsRenewTokenErrorCode errorCode);
 ```
 
 ### DbyGmsSubscriptionRequestBlock
-```objc
+```objectivec
 typedef void (^DbyGmsSubscriptionRequestBlock)(DbyGmsPeerSubscriptionStatusErrorCode errorCode);
 ```

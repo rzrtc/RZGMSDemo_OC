@@ -30,7 +30,7 @@ description: "多贝云 Gms - iOS 呼叫邀请 API 参考文档"
 ## DbyGmsInvitationDelegate
 
 ### invitationFailed
-```objc
+```objectivec
 - (void)gmsInvitationKit:(DbyGmsInvitationKit *_Nonnull)invitationKit invitationFailed:(DbyGmsInvitation *_Nonnull)invitation;
 ```
 | 参数          | 描述                    |
@@ -39,7 +39,7 @@ description: "多贝云 Gms - iOS 呼叫邀请 API 参考文档"
 | invitation    | [DbyGmsInvitation](./DbyGmsModel.md/#dbygmsinvitation) 实例 |
 
 ### invitationArrived
-```objc
+```objectivec
 - (void)gmsInvitationKit:(DbyGmsInvitationKit *_Nonnull)invitationKit invitationArrived:(DbyGmsInvitation *_Nonnull)invitation;
 ```
 | 参数          | 描述                    |
@@ -48,7 +48,7 @@ description: "多贝云 Gms - iOS 呼叫邀请 API 参考文档"
 | invitation    | [DbyGmsInvitation](./DbyGmsModel.md/#dbygmsinvitation) 实例    |
 
 ### invitationCanceled
-```objc
+```objectivec
 - (void)gmsInvitationKit:(DbyGmsInvitationKit *_Nonnull)invitationKit invitationCanceled:(DbyGmsInvitation *_Nonnull)invitation;
 ```
 | 参数          | 描述                    |
@@ -57,7 +57,7 @@ description: "多贝云 Gms - iOS 呼叫邀请 API 参考文档"
 | invitation    | [DbyGmsInvitation](./DbyGmsModel.md/#dbygmsinvitation) 实例    |
 
 ### invitationAccept
-```objc
+```objectivec
 - (void)gmsInvitationKit:(DbyGmsInvitationKit *_Nonnull)invitationKit invitationAccept:(DbyGmsInvitation *_Nonnull)invitation;
 ```
 | 参数          | 描述                    |
@@ -66,7 +66,7 @@ description: "多贝云 Gms - iOS 呼叫邀请 API 参考文档"
 | invitation    | [DbyGmsInvitation](./DbyGmsModel.md/#dbygmsinvitation) 实例    |
 
 ### invitationRefused
-```objc
+```objectivec
 - (void)gmsInvitationKit:(DbyGmsInvitationKit *_Nonnull)invitationKit invitationRefused:(DbyGmsInvitation *_Nonnull)invitation;
 ```
 | 参数          | 描述                                            |
@@ -76,18 +76,18 @@ description: "多贝云 Gms - iOS 呼叫邀请 API 参考文档"
 
 ## Block
 ### DbyGmsInvitationSendBlock
-```objc
+```objectivec
 typedef void (^DbyGmsInvitationSendBlock)(DbyGmsInvitationApiCallErrorCode errorCode);
 ```
 ### DbyGmsInvitationAcceptBlock
-```objc
+```objectivec
 typedef void (^DbyGmsInvitationAcceptBlock)(DbyGmsInvitationApiCallErrorCode errorCode);
 ```
 ### DbyGmsInvitationRefuseBlock
-```objc
+```objectivec
 typedef void (^DbyGmsInvitationRefuseBlock)(DbyGmsInvitationApiCallErrorCode errorCode);
 ```
 ### DbyGmsInvitationCancelBlock
-```objc
+```objectivec
 typedef void (^DbyGmsInvitationCancelBlock)(DbyGmsInvitationApiCallErrorCode errorCode);
 ```

@@ -100,8 +100,6 @@ typedef void (^DbyGmsSendChannelMessageBlock)(DbyGmsSendChannelMessageErrorCode 
 @property (nonatomic, weak, nullable) id<DbyGmsChannelDelegate> delegate;
 @property (nonatomic, copy) NSString *channelId;
 
-- (instancetype)initWithSocketManager:(DbyGmsSocketManager *)manager;
-
 - (void)joinWithCompletion:(DbyGmsJoinChannelBlock)completionBlock;
 
 - (void)leaveWithCompletion:(DbyGmsLeaveChannelBlock)completionBlock;

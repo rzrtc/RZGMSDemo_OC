@@ -67,8 +67,6 @@ typedef void (^DbyGmsInvitationCancelBlock)(DbyGmsInvitationApiCallErrorCode err
 
 @property (nonatomic, weak) id<DbyGmsInvitationDelegate> delegate;
 
-- (instancetype)initWithSocketManager:(DbyGmsSocketManager *)manager;
-
 - (void)sendInvitation:(DbyGmsInvitation *)invitation completion:(DbyGmsInvitationSendBlock)completion;
 - (void)cancelInvitation:(DbyGmsInvitation *)invitation completion:(DbyGmsInvitationCancelBlock)completion;
 

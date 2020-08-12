@@ -4,7 +4,7 @@ description: 多贝云 Gms - iOS 数据模型 API 参考文档。
 ---
 
 ## DbyGmsInvitation
-```objc
+```objectivec
 
 ```
 ### initWithInviter
@@ -14,7 +14,7 @@ description: 多贝云 Gms - iOS 数据模型 API 参考文档。
 | invitee | 被邀请者id |
 
 ## DbyGmsMessage
-```objc
+```objectivec
 @property (nonatomic, assign, readonly) DbyGmsMessageType type;
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic, assign) long long serverReceivedTs;
@@ -26,7 +26,7 @@ description: 多贝云 Gms - iOS 数据模型 API 参考文档。
 | text | 文本 |
 
 ## DbyGmsRawMessage
-```objc
+```objectivec
 @property (nonatomic, nonnull) NSData *rawData;
 ```
 ### initWithRawData
@@ -35,13 +35,13 @@ description: 多贝云 Gms - iOS 数据模型 API 参考文档。
 | data | 二进制数据 |
 
 ## DbyGmsPeerOnlineStatus
-```objc
+```objectivec
 @property (nonatomic, copy, nonnull) NSString *peerId;
 @property (nonatomic, assign) BOOL isOnline;
 ```
 
 ## DbyGmsSendMessageOptions
-```objc
+```objectivec
 /**
 是否设置为离线消息。
 YES: 将该消息设为离线消息。
@@ -54,13 +54,13 @@ NO: （默认）不将该消息设为离线消息。
 ```
 
 ## DbyGmsAttribute
-```objc
+```objectivec
 @property (nonatomic, copy, nonnull) NSString *key;
 @property (nonatomic, copy, nonnull) NSString *value;
 ```
 
 ## DbyGmsMember
-```objc
+```objectivec
 @property (nonatomic, copy, nonnull) NSString *userId;
 @property (nonatomic, copy, nonnull) NSString *channelId;
 ```

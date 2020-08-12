@@ -16,6 +16,12 @@ pod 'DbyGms'
 ### demo运行
 在有`podfile`的目录下，打开命令行，执行`pod install`。然后打开`.xcworkspace`。
 
+### sdk 包含以下功能：
+- [sdk使用](./docs/feature-sdk.md) 
+- [用户的一些操作](./docs/feature-user.md) 
+- [channel使用](./docs/feature-channel.md) 
+- [呼叫邀请使用](./docs/feature-invitation.md) 
+
 ### SDK 包含以下模块：
 - [`GmsClient`](./docs/DbyGmsKit.md) sdk 实例
 - [`GmsChannel`](./docs/DbyGmsChannel.md) 频道实例

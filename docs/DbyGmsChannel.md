@@ -4,11 +4,11 @@ description: 多贝云 Gms - iOS 频道 API 参考文档。
 ---
 
 ## delegate
-```objc
+```objectivec
 @property (nonatomic, weak, nullable) id<DbyGmsChannelDelegate> delegate;
 ```
 ## channelId
-```objc
+```objectivec
 @property (nonatomic, copy) NSString *channelId;
 ```
 
@@ -37,7 +37,7 @@ description: 多贝云 Gms - iOS 频道 API 参考文档。
 # DbyGmsChannelDelegate
 
 ## memberJoined
-```objc
+```objectivec
 - (void)channel:(DbyGmsChannel * _Nonnull)channel memberJoined:(DbyGmsMember * _Nonnull)member;
 ```
 |  参数   | 描述  |
@@ -46,7 +46,7 @@ description: 多贝云 Gms - iOS 频道 API 参考文档。
 | member  | [DbyGmsMember](./DbyGmsModel.md/#dbygmsmember)加入的用户 |
 
 ## memberLeft
-```objc
+```objectivec
 - (void)channel:(DbyGmsChannel * _Nonnull)channel memberLeft:(DbyGmsMember * _Nonnull)member;
 ```
 |  参数   | 描述  |
@@ -55,7 +55,7 @@ description: 多贝云 Gms - iOS 频道 API 参考文档。
 | member  | [DbyGmsMember](./DbyGmsModel.md/#dbygmsmember)离开的用户 |
 
 ## messageReceived
-```objc
+```objectivec
 - (void)channel:(DbyGmsChannel * _Nonnull)channel messageReceived:(DbyGmsMessage * _Nonnull)message fromMember:(DbyGmsMember * _Nonnull)member;
 ```
 |  参数   | 描述  |
@@ -65,7 +65,7 @@ description: 多贝云 Gms - iOS 频道 API 参考文档。
 | member  | [DbyGmsMember](./DbyGmsModel.md/#dbygmsmember)发送消息的用户 |
 
 ## attributeUpdate
-```objc
+```objectivec
 - (void)channel:(DbyGmsChannel * _Nonnull)channel attributeUpdate:(NSArray< DbyGmsAttribute *> * _Nonnull)attributes;
 ```
 |  参数   | 描述  |
@@ -74,7 +74,7 @@ description: 多贝云 Gms - iOS 频道 API 参考文档。
 | attributes  | [DbyGmsAttribute](./DbyGmsModel.md/#dbygmsattribute)频道属性 |
 
 ## memberCount
-```objc
+```objectivec
 - (void)channel:(DbyGmsChannel * _Nonnull)channel memberCount:(int)count;
 ```
 |  参数   | 描述  |
@@ -85,18 +85,18 @@ description: 多贝云 Gms - iOS 频道 API 参考文档。
 
 ## Block
 ### DbyGmsJoinChannelBlock
-```objc
+```objectivec
 typedef void (^DbyGmsJoinChannelBlock)(DbyGmsJoinChannelErrorCode errorCode);
 ```
 ### DbyGmsLeaveChannelBlock
-```objc
+```objectivec
 typedef void (^DbyGmsLeaveChannelBlock)(DbyGmsLeaveChannelErrorCode errorCode);
 ```
 ### DbyGmsGetMembersBlock
-```objc
+```objectivec
 typedef void (^DbyGmsGetMembersBlock)(NSArray< DbyGmsMember *> * _Nullable members, DbyGmsGetMembersErrorCode errorCode);
 ```
 ### DbyGmsSendChannelMessageBlock
-```objc
+```objectivec
 typedef void (^DbyGmsSendChannelMessageBlock)(DbyGmsSendChannelMessageErrorCode errorCode);
 ```

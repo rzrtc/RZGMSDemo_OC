@@ -8,10 +8,10 @@
 
 Pod::Spec.new do |s|
 
-  s.name         = "DbyGms"
+  s.name         = "Starscream"
   s.version      = "0.1.3"
-  s.summary      = "DbyGms"
-  s.description  = "多贝云的实时消息服务"
+  s.summary      = "Starscream"
+  s.description  = "多贝云依赖的Starscream"
 
   s.homepage     = "https://github.com/duobeiyun/DbyGmsDemo_OC.git"
   s.license      = {
@@ -25,6 +25,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.author       = { "zhongfan" => "fan.zhong@duobei.com" }
   s.source       = { :git => "https://github.com/duobeiyun/DbyGmsDemo_OC.git", :tag => "#{s.version}" }
-  s.vendored_frameworks  = "DbyGms.framework"
-  s.dependency 'SocketIO'
+  s.vendored_frameworks  = "Starscream.framework"
+  
 end

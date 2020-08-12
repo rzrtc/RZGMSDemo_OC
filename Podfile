@@ -2,9 +2,9 @@
 platform :ios, '8.0'
 
 target 'DbyGmsDemo_OC' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-#  pod 'DbyGms'
+  
   pod 'DbyGms', :path => './DbyGms.podspec'
+  pod 'SocketIO', :path => './SocketIO.podspec'
+  pod 'Starscream', :path => './Starscream.podspec'
 
 end

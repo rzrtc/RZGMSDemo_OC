@@ -41,7 +41,6 @@ typedef NS_ENUM(NSInteger, DbyGmsLoginErrorCode) {
     DbyGmsLoginErrorAlreadyLogin = 8,          //用户已登录，或正在登录系统，或未调用 logoutWithCompletion 方法退出
     DbyGmsLoginErrorTimeout = 9,               //登录超时。目前的超时设置为 6 秒。
     DbyGmsLoginErrorLoginTooOften = 10,        //登录过于频繁。方法 loginByToken 的调用频率超过 2 次／秒的上限
-    DbyGmsLoginErrorLoginNotInitialized = 101, //SDK 未完成初始化
 };
 typedef NS_ENUM(NSInteger, DbyGmsLogoutErrorCode) {
     DbyGmsLogoutErrorOk = 0,            //登出成功
@@ -55,7 +54,6 @@ typedef NS_ENUM(NSInteger, DbyGmsRenewTokenErrorCode) {
     DbyGmsRenewTokenErrorTooOften = 4,         //方法调用过于频繁。超过 2 次／秒上限
     DbyGmsRenewTokenErrorTokenExpired = 5,     //输入 Token 已过期
     DbyGmsRenewTokenErrorInvalidToken = 6,     //输入 Token 无效
-    DbyGmsRenewTokenErrorNotInitialized = 101, //SDK 未完成初始化
     DbyGmsRenewTokenErrorNotLoggedIn = 102,    //更新 Token 前未调用 loginByToken 方法或者 loginByToken 方法调用未成功
 };
 #pragma mark - channel
@@ -68,8 +66,6 @@ typedef NS_ENUM(NSInteger, DbyGmsJoinChannelErrorCode) {
     DbyGmsJoinChannelErrorExceedLimit = 5,      //同时加入的频道数超过 20 上限。
     DbyGmsJoinChannelErrorAlreadyJoined = 6,    //用户正在加入频道或已成功加入频道。
     DbyGmsJoinChannelErrorTooOften = 7,         //方法调用超过 50 次每 3 秒的上限
-    DbyGmsJoinSameChannelErrorTooOften = 8,     //加入相同频道的频率超过每 5 秒 2 次的上限
-    DbyGmsJoinChannelErrorNotInitialized = 101, //SDK 未完成初始化
     DbyGmsJoinChannelErrorNotLoggedIn = 102,    //用户加入频道前未调用 loginByToken 方法或者 loginByToken 方法调用未成功
 };
 typedef NS_ENUM(NSInteger, DbyGmsLeaveChannelErrorCode) {
@@ -77,7 +73,6 @@ typedef NS_ENUM(NSInteger, DbyGmsLeaveChannelErrorCode) {
     DbyGmsLeaveChannelErrorFailure = 1,          //用户离开频道失败
     DbyGmsLeaveChannelErrorRejected = 2,         //预留错误码
     DbyGmsLeaveChannelErrorNotInChannel = 3,     //用户不在频道内
-    DbyGmsLeaveChannelErrorNotInitialized = 101, //SDK 未完成初始化
     DbyGmsLeaveChannelErrorNotLoggedIn = 102,    //未调用 loginByToken 方法或者 loginByToken 方法调用未成功
 };
 typedef NS_ENUM(NSInteger, DbyGmsChannelMemberCountErrorCode) {
@@ -87,7 +82,6 @@ typedef NS_ENUM(NSInteger, DbyGmsChannelMemberCountErrorCode) {
     DbyGmsChannelMemberCountErrorTooOften = 3,         //方法调用过于频繁。超过每秒 1 次的限制
     DbyGmsChannelMemberCountErrorTimeout = 4,          //服务器响应超时。当前的当前的超时设定为 5 秒
     DbyGmsChannelMemberCountErrorExceedLimit = 5,      //查询频道数超过 32 条上限
-    DbyGmsChannelMemberCountErrorNotInitialized = 101, //sdk 服务未完成初始化
     DbyGmsChannelMemberCountErrorNotLoggedIn = 102,    //本次操作前未调用 loginByToken 方法或者 loginByToken 方法调用未成功
 };
 typedef NS_ENUM(NSInteger, DbyGmsGetMembersErrorCode) {
@@ -97,7 +91,6 @@ typedef NS_ENUM(NSInteger, DbyGmsGetMembersErrorCode) {
     DbyGmsGetMembersErrorTimeout = 3,          //获取频道内成员列表超时。当前的超时设置为 5 秒
     DbyGmsGetMembersErrorTooOften = 4,         //方法调用频率超过 5 次每 2 秒的上限
     DbyGmsGetMembersErrorNotInChannel = 5,     //用户不在频道内
-    DbyGmsGetMembersErrorNotInitialized = 101, //SDK 未完成初始化
     DbyGmsGetMembersErrorNotLoggedIn = 102,    //获取频道成员列表前未调用 loginByToken 方法或者 loginByToken 方法调用未成功
 };
 typedef NS_ENUM(NSInteger, DbyGmsSendChannelMessageErrorCode) {
@@ -107,7 +100,6 @@ typedef NS_ENUM(NSInteger, DbyGmsSendChannelMessageErrorCode) {
     DbyGmsSendChannelMessageTooOften = 3,              //发送消息（点对点消息和频道消息一并计算在内）超过 60 次／秒的上限
     DbyGmsSendChannelMessageInvalidMessage = 4,        //消息为 null 或超出 32 KB 的长度限制
     DbyGmsSendChannelMessageErrorNotInChannel = 5,     //不在频道内
-    DbyGmsSendChannelMessageErrorNotInitialized = 101, //SDK 未完成初始化
     DbyGmsSendChannelMessageNotLoggedIn = 102,         //用户未登录
 };
 #pragma mark - user
@@ -119,7 +111,6 @@ typedef NS_ENUM(NSInteger, DbyGmsProcessAttributeErrorCode) {
     DbyGmsAttributeOperationErrorTooOften = 5,         //方法调用频率超过限制
     DbyGmsAttributeOperationErrorUserNotFound = 6,     //未找到指定用户
     DbyGmsAttributeOperationErrorTimeout = 7,          //属性操作超时。当前的超时设定为 5 秒
-    DbyGmsAttributeOperationErrorNotInitialized = 101, //SDK 未完成初始化
     DbyGmsAttributeOperationErrorNotLoggedIn = 102,    //执行用户属性操作前未调用 loginByToken 方法或者 loginByToken 方法调用未成功
 };
 typedef NS_ENUM(NSInteger, DbyGmsQueryPeersOnlineErrorCode) {
@@ -129,7 +120,6 @@ typedef NS_ENUM(NSInteger, DbyGmsQueryPeersOnlineErrorCode) {
     DbyGmsQueryPeersOnlineErrorRejected = 3,         //预留错误码
     DbyGmsQueryPeersOnlineErrorTimeout = 4,          //服务器响应超时
     DbyGmsQueryPeersOnlineErrorTooOften = 5,         //方法调用过于频繁。超过 10 次每 5 秒的上限。
-    DbyGmsQueryPeersOnlineErrorNotInitialized = 101, //SDK 未完成初始化
     DbyGmsQueryPeersOnlineErrorNotLoggedIn = 102,    //查询指定用户在线状态前未调用 loginByToken 方法或者 loginByToken 方法调用未成功
 };
 typedef NS_ENUM(NSInteger, DbyGmsPeerSubscriptionStatusErrorCode) {
@@ -140,7 +130,6 @@ typedef NS_ENUM(NSInteger, DbyGmsPeerSubscriptionStatusErrorCode) {
     DbyGmsPeerSubscriptionStatusErrorTimeout = 4,          //服务器响应超时
     DbyGmsPeerSubscriptionStatusErrorTooOften = 5,         //方法调用过于频繁
     DbyGmsPeerSubscriptionStatusErrorOverflow = 6,         //订阅人数超过 512 人的上限
-    DbyGmsPeerSubscriptionStatusErrorNotInitialized = 101, //SDK 未完成初始化
     DbyGmsPeerSubscriptionStatusErrorNotLoggedIn = 102,    //本次操作前未调用 loginByToken 方法或者 loginByToken 方法调用未成功
 };
 typedef NS_ENUM(NSInteger, DbyGmsPeerSubscriptionOptions) {
@@ -155,7 +144,6 @@ typedef NS_ENUM(NSInteger, DbyGmsSendPeerMessageErrorCode) {
     DbyGmsSendPeerMessageErrorTooOften = 5,         //发送消息（点对点消息和频道消息一并计算在内）超过 60 次／秒的上限
     DbyGmsSendPeerMessageErrorInvalidUserId = 6,    //用户 ID 无效
     DbyGmsSendPeerMessageErrorInvalidMessage = 7,   //消息为 null 或超出 32 KB 的长度限制
-    DbyGmsSendPeerMessageErrorNotInitialized = 101, //SDK 未完成初始化
     DbyGmsSendPeerMessageErrorNotLoggedIn = 102,    //发送点对点消息前未调用 loginByToken 方法或者 loginByToken 方法调用未成功
 };
 #pragma mark - invitation
