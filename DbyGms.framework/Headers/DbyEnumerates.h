@@ -27,7 +27,7 @@ typedef NS_ENUM(NSInteger, DbyGmsConnectionChangeReason) {
     DbyGmsConnectionChangeReasonInterrupted = 5,    //已登录，由于网络原因，断开连接了
     DbyGmsConnectionChangeReasonLogout = 6,         //调用了logout
     DbyGmsConnectionChangeReasonBannedByServer = 7, //登录被禁止
-    DbyGmsConnectionChangeReasonRemoteLogin = 8,    //远端登录，本地被踢出
+    DbyGmsConnectionChangeReasonKickOff = 8,        //远端登录，本地被踢出
 };
 typedef NS_ENUM(NSInteger, DbyGmsLoginErrorCode) {
     DbyGmsLoginErrorOk = 0,                    //登录成功
