@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "DbyGms"
-  s.version      = "0.1.6"
+  s.version      = "0.1.7"
   s.summary      = "DbyGms"
   s.description  = "多贝云的实时消息服务"
 

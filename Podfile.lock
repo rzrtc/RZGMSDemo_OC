@@ -1,5 +1,5 @@
 PODS:
-  - DbyGms (0.1.4):
+  - DbyGms (0.1.7):
     - SocketIO
   - SocketIO (0.1.3):
     - Starscream
@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
     :path: "./Starscream.podspec"
 
 SPEC CHECKSUMS:
-  DbyGms: a795b9f53e81fc4e628442d56b8080d99cf09767
+  DbyGms: 05cecefdf1a185ecd2cbb25cbb8a3bfd5cc61fe2
   SocketIO: 86ff694698b215696eb2c4a728d7b1be61931252
   Starscream: 30b9c8e3dcaadb1467caadd371bf4291277badf4
 
