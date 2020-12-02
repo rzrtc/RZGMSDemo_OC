@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
     :path: "./frameworks/Starscream.podspec"
 
 SPEC CHECKSUMS:
-  DbyGms: 2294be44695583db3343691f03cf78b958a912f5
+  DbyGms: 77ecbcfe69d26204189667f6a0cbba974f45b523
   SocketIO: 86ff694698b215696eb2c4a728d7b1be61931252
   Starscream: 30b9c8e3dcaadb1467caadd371bf4291277badf4
 

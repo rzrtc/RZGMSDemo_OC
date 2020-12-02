@@ -27,6 +27,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.author       = { "zhongfan" => "fan.zhong@duobei.com" }
   s.source       = { :git => "https://github.com/duobeiyun/DbyGmsDemo_OC.git", :tag => "#{s.version}" }
-  s.vendored_frameworks  = "frameworks/DbyGms.framework"
+  s.vendored_frameworks  = "DbyGms.framework"
   s.dependency 'SocketIO'
 end
