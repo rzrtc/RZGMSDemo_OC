@@ -1,28 +1,28 @@
 PODS:
-  - DbyGms (0.1.7):
+  - DbyGms (0.1.8):
     - SocketIO
   - SocketIO (0.1.3):
     - Starscream
   - Starscream (0.1.3)
 
 DEPENDENCIES:
-  - DbyGms (from `./DbyGms.podspec`)
-  - SocketIO (from `./SocketIO.podspec`)
-  - Starscream (from `./Starscream.podspec`)
+  - DbyGms (from `./frameworks/DbyGms.podspec`)
+  - SocketIO (from `./frameworks/SocketIO.podspec`)
+  - Starscream (from `./frameworks/Starscream.podspec`)
 
 EXTERNAL SOURCES:
   DbyGms:
-    :path: "./DbyGms.podspec"
+    :path: "./frameworks/DbyGms.podspec"
   SocketIO:
-    :path: "./SocketIO.podspec"
+    :path: "./frameworks/SocketIO.podspec"
   Starscream:
-    :path: "./Starscream.podspec"
+    :path: "./frameworks/Starscream.podspec"
 
 SPEC CHECKSUMS:
-  DbyGms: 05cecefdf1a185ecd2cbb25cbb8a3bfd5cc61fe2
+  DbyGms: 2294be44695583db3343691f03cf78b958a912f5
   SocketIO: 86ff694698b215696eb2c4a728d7b1be61931252
   Starscream: 30b9c8e3dcaadb1467caadd371bf4291277badf4
 
-PODFILE CHECKSUM: c80bc64547847bcdaa3d6d63344a545529d2c32f
+PODFILE CHECKSUM: 315e47d8906142a7a6970f8bb098f973f4d6ed3a
 
 COCOAPODS: 1.9.1

@@ -1,0 +1,6 @@
+framework module DbyGms {
+  umbrella header "DbyGms-umbrella.h"
+
+  export *
+  module * { export * }
+}

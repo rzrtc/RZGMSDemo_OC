@@ -3,8 +3,8 @@ platform :ios, '8.0'
 
 target 'DbyGmsDemo_OC' do
   
-  pod 'DbyGms', :path => './DbyGms.podspec'
-  pod 'SocketIO', :path => './SocketIO.podspec'
-  pod 'Starscream', :path => './Starscream.podspec'
+  pod 'DbyGms', :path => './frameworks/DbyGms.podspec'
+  pod 'SocketIO', :path => './frameworks/SocketIO.podspec'
+  pod 'Starscream', :path => './frameworks/Starscream.podspec'
 
 end
