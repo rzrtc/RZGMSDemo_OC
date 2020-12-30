@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "RZGMS"
-  s.version      = "0.1.9"
+  s.version      = "1.0.0"
   s.summary      = "RZGMS"
   s.description  = "认真 GMS 的实时消息服务，cocoapods线上版本"
 
