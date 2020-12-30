@@ -6,8 +6,8 @@ title: channel 使用
 
 ## 加入频道
 ```objectivec
-[_gmsChannel joinWithCompletion:^(DbyGmsJoinChannelErrorCode errorCode) {
-    if (errorCode == DbyGmsJoinChannelErrorOk) {
+[_gmsChannel joinWithCompletion:^(RZGMSJoinChannelErrorCode errorCode) {
+    if (errorCode == RZGMSJoinChannelErrorOk) {
         
     }
 }];
@@ -15,8 +15,8 @@ title: channel 使用
 
 ## 离开频道
 ```objectivec
-[_gmsChannel leaveWithCompletion:^(DbyGmsLeaveChannelErrorCode errorCode) {
-    if (errorCode == DbyGmsLeaveChannelErrorOk) {
+[_gmsChannel leaveWithCompletion:^(RZGMSLeaveChannelErrorCode errorCode) {
+    if (errorCode == RZGMSLeaveChannelErrorOk) {
         
     }
 }];
@@ -24,10 +24,10 @@ title: channel 使用
 
 ## 发送频道消息
 ```objectivec
-DbyGmsSendMessageOptions *options = [[DbyGmsSendMessageOptions alloc] init];
+RZGMSSendMessageOptions *options = [[RZGMSSendMessageOptions alloc] init];
 options.enableOfflineMessaging = true;
-[_gmsChannel sendMessage:message options:options completion:^(DbyGmsSendChannelMessageErrorCode errorCode) {
-    if (errorCode == DbyGmsSendChannelMessageErrorOk) {
+[_gmsChannel sendMessage:message options:options completion:^(RZGMSSendChannelMessageErrorCode errorCode) {
+    if (errorCode == RZGMSSendChannelMessageErrorOk) {
 
     }
 }];
@@ -35,8 +35,8 @@ options.enableOfflineMessaging = true;
 
 ## 获取频道成员列表
 ```objectivec
-[_gmsChannel getMembersWithCompletion:^(NSArray<DbyGmsMember *> * _Nullable members, DbyGmsGetMembersErrorCode errorCode) {
-    if (errorCode == DbyGmsGetMembersErrorOk && members) {
+[_gmsChannel getMembersWithCompletion:^(NSArray<RZGMSMember *> * _Nullable members, RZGMSGetMembersErrorCode errorCode) {
+    if (errorCode == RZGMSGetMembersErrorOk && members) {
 
     }
 }];

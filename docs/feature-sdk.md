@@ -1,25 +1,25 @@
 ---
 title: sdk 使用
 ---
-## 创建 [DbyGmsKit](./DbyGmsKit.md) 实例
+## 创建 [RZGMSKit](./RZGMSKit.md) 实例
 ```objectivec
 //换成你自己的appid
-DbyGmsKit *dbyGmsKit = [[DbyGmsKit alloc] initWithAppId:@"123" delegate:self];
+RZGMSKit *rzGMSKit = [[RZGMSKit alloc] initWithAppId:@"123" delegate:self];
 ```
 
-## 创建 [DbyGmsChannel](./DbyGmsChannel.md) 实例
+## 创建 [RZGMSChannel](./RZGMSChannel.md) 实例
 ```objectivec
-DbyGmsChannel *gmsChannel = [self.dbyGmsKit createChannelWithId:@"channelId" delegate:self];
+RZGMSChannel *gmsChannel = [self.rzGMSKit createChannelWithId:@"channelId" delegate:self];
 ```
 
-## 销毁 [DbyGmsChannel](./DbyGmsChannel.md) 实例
+## 销毁 [RZGMSChannel](./RZGMSChannel.md) 实例
 ```objectivec
 - (BOOL)destroyChannelWithId:(NSString *)channelId;
 ```
 
-## 获取 [DbyGmsInvitationKit](./DbyGmsInvitationKit.md) 实例
+## 获取 [RZGMSInvitationKit](./RZGMSInvitationKit.md) 实例
 ```objectivec
-- (DbyGmsInvitationKit *)getGmsInvitationKit;
+- (RZGMSInvitationKit *)getGMSInvitationKit;
 ```
 
 ## 登录
@@ -27,8 +27,8 @@ DbyGmsChannel *gmsChannel = [self.dbyGmsKit createChannelWithId:@"channelId" del
 NSString *token = @"token"; //换成自己的token
 NSDate *date = [NSDate date];
 int64_t ts = (int64_t)(date.timeIntervalSince1970 * 1000);
-[self.dbyGmsKit loginByToken:token timeStamp:ts userId:uid completion:^(DbyGmsLoginErrorCode errorCode) {
-    if (errorCode == DbyGmsLoginErrorOk) {
+[self.rzGMSKit loginByToken:token timeStamp:ts userId:uid completion:^(RZGMSLoginErrorCode errorCode) {
+    if (errorCode == RZGMSLoginErrorOk) {
         
     }
 }];
@@ -36,13 +36,13 @@ int64_t ts = (int64_t)(date.timeIntervalSince1970 * 1000);
 
 ## 登出
 ```objectivec
-[self.dbyGmsKit logoutWithCompletion:^(DbyGmsLogoutErrorCode errorCode) {
-    if (errorCode == DbyGmsLogoutErrorOk) {
+[self.rzGMSKit logoutWithCompletion:^(RZGMSLogoutErrorCode errorCode) {
+    if (errorCode == RZGMSLogoutErrorOk) {
     }
 }];
 ```
 
 ## 更新token
 ```objectivec
-- (void)renewToken:(NSString *)token timeStamp:(NSTimeInterval)timeStamp completion:(DbyGmsRenewTokenBlock)completionBlock;
+- (void)renewToken:(NSString *)token timeStamp:(NSTimeInterval)timeStamp completion:(RZGMSRenewTokenBlock)completionBlock;
 ```

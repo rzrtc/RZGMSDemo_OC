@@ -1,0 +1,6 @@
+framework module RZGMS {
+  umbrella header "RZGMS-umbrella.h"
+
+  export *
+  module * { export * }
+}
