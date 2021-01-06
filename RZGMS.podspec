@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "RZGMS"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "RZGMS"
   s.description  = "认真 GMS 的实时消息服务，cocoapods线上版本"
 
@@ -27,6 +27,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.author       = { "zhongfan" => "fan.zhong@duobei.com" }
   s.source       = { :git => "https://github.com/duobeiyun/RZGMSDemo_OC.git", :tag => "#{s.version}" }
-  s.vendored_frameworks  = "frameworks/RZGMS.framework"
+  s.vendored_frameworks  = "frameworks/RZGMS.framework", "frameworks/SocketIO.framework", "frameworks/Starscream.framework"
   
 end

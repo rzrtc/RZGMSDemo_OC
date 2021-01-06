@@ -3,8 +3,6 @@ platform :ios, '8.0'
 
 target 'RZGMSDemo_OC' do
   
-  pod 'RZGMS', :path => './frameworks/RZGMS.podspec'
-  pod 'SocketIO', :path => './frameworks/SocketIO.podspec'
-  pod 'Starscream', :path => './frameworks/Starscream.podspec'
+  pod 'RZGMS', :path => 'RZGMS.podspec'
 
 end
