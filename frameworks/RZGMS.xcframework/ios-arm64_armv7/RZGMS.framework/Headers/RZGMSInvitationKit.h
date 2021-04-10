@@ -24,7 +24,7 @@ typedef void (^RZGMSInvitationCancelBlock)(RZGMSInvitationApiCallErrorCode error
 @protocol RZGMSInvitationDelegate <NSObject>
 
 @optional
-- (void)gmsInvitationKit:(RZGMSInvitationKit *)invitationKit invitationFailed:(RZGMSInvitation *)invitation;
+- (void)gmsInvitationKit:(RZGMSInvitationKit *)invitationKit invitationFailed:(RZGMSInvitation *)invitation errorCode:(RZGMSInvitationErrorCode)errorCode;
 - (void)gmsInvitationKit:(RZGMSInvitationKit *)invitationKit invitationArrived:(RZGMSInvitation *)invitation;
 - (void)gmsInvitationKit:(RZGMSInvitationKit *)invitationKit invitationCanceled:(RZGMSInvitation *)invitation;
 - (void)gmsInvitationKit:(RZGMSInvitationKit *)invitationKit invitationAccept:(RZGMSInvitation *)invitation;

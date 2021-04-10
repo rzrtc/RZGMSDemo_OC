@@ -155,6 +155,13 @@ typedef NS_ENUM(NSInteger, RZGMSInvitationApiCallErrorCode) {
     RZGMSInvitationApiCallErrorWrongIdentity = 5,   //呼叫邀请相关 API 调用失败：非法身份调用
     RZGMSInvitationApiCallErrorNotLoggedIn = 102,   //呼叫邀请相关 API 调用失败：未登录
 };
+typedef NS_ENUM(NSInteger, RZGMSInvitationErrorCode) {
+    RZGMSInvitationErrorCodeErrorOk = 0,                //呼叫邀请成功
+    RZGMSInvitationErrorCodeErrorRemoteOffline = 1,     //呼叫邀请失败：对方不在线
+    RZGMSInvitationErrorCodeErrorRemoteNoResponse = 2,  //呼叫邀请失败：服务器未返回任何数据
+    RZGMSInvitationErrorCodeErrorExpire = 3,            //呼叫邀请失败：超时
+    RZGMSInvitationErrorCodeErrorNotLoggedIn = 4,       //呼叫邀请失败：未登录
+};
 typedef NS_ENUM(NSInteger, RZGMSInvitationState) {
     RZGMSInvitationStateIdle = 0,     //初始状态
     RZGMSInvitationStateFailure = 1,  //呼叫失败
