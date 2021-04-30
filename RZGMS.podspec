@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "RZGMS"
-  s.version      = "1.0.3"
+  s.version      = "1.1.0"
   s.summary      = "RZGMS"
   s.description  = "认真 GMS 的实时消息服务，cocoapods线上版本"
 
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.license      = {
     :type => 'Copyright',
     :text => <<-LICENSE
-      Copyright (C) 2020 RZ GMS, Inc. All rights reserved.
+      Copyright (C) 2021 RZ GMS, Inc. All rights reserved.
       LICENSE
   }
   s.platform     = :ios
