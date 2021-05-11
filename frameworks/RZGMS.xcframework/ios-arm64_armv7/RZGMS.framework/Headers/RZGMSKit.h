@@ -168,7 +168,7 @@ typedef void (^RZGMSSubscriptionRequestBlock)(RZGMSPeerSubscriptionStatusErrorCo
 - (void)setLogFilters:(RZGMSLogFilter)filter;
 + (NSString *)getSDKVersion;
 
-///返回sdk内部的一些状态，方便调试和排查问题
+///返回sdk内部的一些运行信息，方便调试和排查问题
 - (NSDictionary *)getDebugInfo;
 
 @end
