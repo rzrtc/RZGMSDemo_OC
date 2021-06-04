@@ -24,6 +24,7 @@
 #import "RZGMSPeerOnlineStatus.h"
 #import "RZGMSResult.h"
 #import "RZGMSSendMessageOptions.h"
+#import "RZGMSUserAttributes.h"
 
 FOUNDATION_EXPORT double RZGMSVersionNumber;
 FOUNDATION_EXPORT const unsigned char RZGMSVersionString[];

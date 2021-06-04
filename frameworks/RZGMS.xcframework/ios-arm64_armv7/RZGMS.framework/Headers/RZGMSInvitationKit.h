@@ -24,10 +24,23 @@ typedef void (^RZGMSInvitationCancelBlock)(RZGMSInvitationApiCallErrorCode error
 @protocol RZGMSInvitationDelegate <NSObject>
 
 @optional
+
 - (void)gmsInvitationKit:(RZGMSInvitationKit *)invitationKit invitationFailed:(RZGMSInvitation *)invitation errorCode:(RZGMSInvitationErrorCode)errorCode;
+/**
+ 返回给被叫的回调：收到新的呼叫邀请。
+ */
 - (void)gmsInvitationKit:(RZGMSInvitationKit *)invitationKit invitationArrived:(RZGMSInvitation *)invitation;
+/**
+ 返回给被叫的回调：主叫取消了呼叫邀请。
+ */
 - (void)gmsInvitationKit:(RZGMSInvitationKit *)invitationKit invitationCanceled:(RZGMSInvitation *)invitation;
+/**
+ 返回给主叫的回调：被叫已接受呼叫邀请。
+ */
 - (void)gmsInvitationKit:(RZGMSInvitationKit *)invitationKit invitationAccept:(RZGMSInvitation *)invitation;
+/**
+ 返回给主叫的回调：呼叫邀请过程失败。
+ */
 - (void)gmsInvitationKit:(RZGMSInvitationKit *)invitationKit invitationRefused:(RZGMSInvitation *)invitation;
 
 @end

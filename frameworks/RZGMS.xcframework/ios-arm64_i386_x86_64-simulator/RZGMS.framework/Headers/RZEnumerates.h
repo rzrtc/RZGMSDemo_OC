@@ -133,7 +133,9 @@ typedef NS_ENUM(NSInteger, RZGMSPeerSubscriptionStatusErrorCode) {
 };
 typedef NS_ENUM(NSInteger, RZGMSPeerSubscriptionOptions) {
     RZGMSPeerSubscriptionOnlineStatus = 0, //用户在线状态
+    RZGMSPeerSubscriptionUserAttributes = 1 //用户属性
 };
+
 typedef NS_ENUM(NSInteger, RZGMSSendPeerMessageErrorCode) {
     RZGMSSendPeerMessageErrorOk = 0,               //对端已接收到点对点消息
     RZGMSSendPeerMessageErrorFailure = 1,          //点对点消息发送失败

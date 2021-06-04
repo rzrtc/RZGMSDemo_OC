@@ -8,6 +8,7 @@
 #import "RZChannelMemberCount.h"
 #import "RZEnumerates.h"
 #import "RZGMSAttribute.h"
+#import "RZGMSUserAttributes.h"
 #import "RZGMSChannel.h"
 #import "RZGMSChannelAttributeOptions.h"
 #import "RZGMSInvitationKit.h"
@@ -16,6 +17,7 @@
 #import "RZGMSPeerOnlineStatus.h"
 #import "RZGMSSendMessageOptions.h"
 #import "RZGMSOptions.h"
+
 #import <Foundation/Foundation.h>
 
 @class RZGMSKit;
@@ -78,6 +80,10 @@ typedef void (^RZGMSClearLocalUserAttributesBlock)(RZGMSProcessAttributeErrorCod
  Returns the result of the [getUserAttributes]([RZGMSKit getUserAllAttributes:completion:]) or the [getUserAttributesByKeys]([RZGMSKit getUserAttributes:ByKeys:completion:]) method call. <p><li><i>attributes:</i> An array of RtmAttibutes. See RZGMSAttribute. <p><li><i>userId:</i> The User ID of the specified user. <p><li><i>errorCode:</i> See RZGMSProcessAttributeErrorCode.
  */
 typedef void (^RZGMSGetUserAttributesBlock)(NSArray<RZGMSAttribute *> *_Nullable attributes, NSString *userId, RZGMSProcessAttributeErrorCode errorCode);
+
+typedef void(^RZGMSBatchFetchPeersUserAttributesBlock) (NSArray<RZGMSUserAttributes *> *_Nullable peersUserAttributes,
+                                                        RZGMSQueryPeersOnlineErrorCode errorCode);
+
 /**
  Returns the result of the [renewToken]([RZGMSKit renewToken:completion:]) method call. <p><li><i>token</i> Your new Token. <li><i>errorCode:</i> See RZGMSRenewTokenErrorCode.
  */
@@ -101,6 +107,12 @@ typedef void (^RZGMSSubscriptionRequestBlock)(RZGMSPeerSubscriptionStatusErrorCo
 ///token过期通知，重连的时候触发
 - (void)rzGMSKitTokenDidExpire:(RZGMSKit *)kit;
 
+
+/// 用户调用 subscribePeersUserAttribes: 批量订阅用户属性变更回调
+/// @param kit RZGMSKit 实例
+/// @param peersUserAttributes  属性变更数组，RZGMSUserAttributes 数组
+- (void)rzGMSKit:(RZGMSKit *)kit peersUserAttributesChanged:(NSArray<RZGMSUserAttributes*>*)peersUserAttributes;
+
 @end
 
 @interface RZGMSKit : NSObject
@@ -121,6 +133,13 @@ typedef void (^RZGMSSubscriptionRequestBlock)(RZGMSPeerSubscriptionStatusErrorCo
 - (instancetype _Nullable)initWithAppId:(NSString *)appId delegate:(id<RZGMSDelegate> _Nullable)delegate options:(RZGMSOptions *_Nullable)options;
 
 #pragma mark - login
+
+
+/// 登录消息系统
+/// @param token 登录token
+/// @param timeStamp 当前时间戳，毫秒
+/// @param userId 登录用户ID
+/// @param completionBlock 完成回调
 - (void)loginByToken:(NSString *)token timeStamp:(int64_t)timeStamp userId:(NSString *)userId completion:(RZGMSLoginBlock)completionBlock;
 - (void)logoutWithCompletion:(RZGMSLogoutBlock)completionBlock;
 - (void)renewToken:(NSString *)token timeStamp:(int64_t)timeStamp completion:(RZGMSRenewTokenBlock)completionBlock;
@@ -146,7 +165,32 @@ typedef void (^RZGMSSubscriptionRequestBlock)(RZGMSPeerSubscriptionStatusErrorCo
 - (void)getUserAttributes:(NSString *)userId byKeys:(NSArray<NSString *> *_Nullable)attributeKeys completion:(RZGMSGetUserAttributesBlock)completionBlock;
 - (void)getUserAttributes:(NSString *)userId completion:(RZGMSGetUserAttributesBlock)completionBlock;
 
-#pragma mark - onlin status -
+
+/// 批量订阅其他用户UserAttributes变化
+/// @param peerIds 用户ID数组
+/// @param completionBlock  结果回调
+- (void)subscribePeersUserAttribes:(NSArray<NSString *> *)peerIds completion:(RZGMSSubscriptionRequestBlock)completionBlock;
+
+/// 批量取消订阅其他用户UserAttributes变化
+/// @param peerIds 用户ID数组
+/// @param completionBlock  结果回调
+- (void)unsubscribePeersUserAttribes:(NSArray<NSString *> *)peerIds completion:(RZGMSSubscriptionRequestBlock)completionBlock;
+
+
+/// 批量查询用户所有属性
+/// @param peerIds 用户ID数组
+/// @param completionBlock 回调结果
+- (void)getPeersUserAttributes:(NSArray<NSString *> *)peerIds completion:(RZGMSBatchFetchPeersUserAttributesBlock)completionBlock;
+
+/// 限定keys， 批量查询用户属性
+/// @param peerIds 用户ID数组
+/// @param attributeKeys 所要查询的属性的key
+/// @param completionBlock 回调结果
+- (void)getPeersUserAttributes:(NSArray<NSString *> *)peerIds
+                        byKeys:(NSArray<NSString *> *_Nullable)attributeKeys
+                    completion:(RZGMSBatchFetchPeersUserAttributesBlock)completionBlock;
+
+#pragma mark - online status -
 - (void)subscribePeersOnlineStatus:(NSArray<NSString *> *)peerIds completion:(RZGMSSubscriptionRequestBlock)completionBlock;
 - (void)unsubscribePeersOnlineStatus:(NSArray<NSString *> *)peerIds completion:(RZGMSSubscriptionRequestBlock)completionBlock;
 - (void)queryPeersOnlineStatus:(NSArray<NSString *> *)peerIds completion:(RZGMSQueryPeersOnlineBlock)completionBlock;
