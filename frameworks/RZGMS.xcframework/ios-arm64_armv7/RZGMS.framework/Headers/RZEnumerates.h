@@ -27,6 +27,7 @@ typedef NS_ENUM(NSInteger, RZGMSConnectionChangeReason) {
     RZGMSConnectionChangeReasonLogout = 6,         //调用了logout
     RZGMSConnectionChangeReasonBannedByServer = 7, //登录被禁止
     RZGMSConnectionChangeReasonKickOff = 8,        //远端登录，本地被踢出
+    RZGMSConnectionChangeReasonExpireSession = 9,  //session过期
 };
 typedef NS_ENUM(NSInteger, RZGMSLoginErrorCode) {
     RZGMSLoginErrorOk = 0,                    //登录成功
@@ -74,6 +75,14 @@ typedef NS_ENUM(NSInteger, RZGMSLeaveChannelErrorCode) {
     RZGMSLeaveChannelErrorNotInChannel = 3,     //用户不在频道内
     RZGMSLeaveChannelErrorNotLoggedIn = 102,    //未调用 loginByToken 方法或者 loginByToken 方法调用未成功
 };
+
+typedef NS_ENUM(NSInteger, RZGMSMemberLeaveChannelReason) {
+    RZGMSMemberLeaveChannelReasonUnknown = 0,   // 原因未知
+    RZGMSMemberLeaveChannelReasonQuit = 1,      // 用户主动调用leave接口
+    RZGMSMemberLeaveChannelReasonDisconnect = 2,// 服务端只感知到了用户断开连接，用户未调用leave接口
+};
+
+
 typedef NS_ENUM(NSInteger, RZGMSChannelMemberCountErrorCode) {
     RZGMSChannelMemberCountErrorOk = 0,               //获取指定频道成员人数成功
     RZGMSChannelMemberCountErrorFailure = 1,          //通用未知错误

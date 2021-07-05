@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/Starscream-Swift.h</key>
 		<data>
-		5fF8qFj6hUBGfW1jG2YQdxd76RE=
+		1npiP7Aw7ob84zqOMrrtzTvqxaM=
 		</data>
 		<key>Headers/Starscream-umbrella.h</key>
 		<data>
@@ -14,103 +14,103 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		z8/ZKSbn+xyzr6zy1puh8Z/kJ6Q=
+		u2mXzwAmYkPosY+KFoyZ7n8ZuY4=
 		</data>
 		<key>Modules/Starscream.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		VoOMPk8gqIoAGLaikEyiDjMYhUM=
+		kUxmKim+3KrWunWkqFxE6F90sQM=
 		</data>
 		<key>Modules/Starscream.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<data>
-		VoOMPk8gqIoAGLaikEyiDjMYhUM=
+		kUxmKim+3KrWunWkqFxE6F90sQM=
 		</data>
 		<key>Modules/Starscream.swiftmodule/Project/i386-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		TwGJrUukn2DoGHIr+w4088WhwTI=
+		uHEeAmxoDy+XnhhMNAD4dp4OdVg=
 		</data>
 		<key>Modules/Starscream.swiftmodule/Project/i386.swiftsourceinfo</key>
 		<data>
-		TwGJrUukn2DoGHIr+w4088WhwTI=
+		uHEeAmxoDy+XnhhMNAD4dp4OdVg=
 		</data>
 		<key>Modules/Starscream.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		zhCxqedhM6CC6cYUK3tdsGcanJU=
+		UgmLjZTV7I2IFFP757FiNiq1Lz0=
 		</data>
 		<key>Modules/Starscream.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<data>
-		zhCxqedhM6CC6cYUK3tdsGcanJU=
+		UgmLjZTV7I2IFFP757FiNiq1Lz0=
 		</data>
 		<key>Modules/Starscream.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		VdNbKWZr/tINLaYItIxrKbMKDIY=
+		7mEGMEL7lnsTCZnwgoWTphZGP98=
 		</data>
 		<key>Modules/Starscream.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		T1iijlo02GUzmWG62hf8Fdsa+wQ=
+		+wZV0s/s1ReaMS8rcqp65NFXfeE=
 		</data>
 		<key>Modules/Starscream.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		xfjR3wb4c6GF7KVbUcC3EpPsme8=
+		7RkXsTHAAZW17sPnHjimwg009AA=
 		</data>
 		<key>Modules/Starscream.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		VdNbKWZr/tINLaYItIxrKbMKDIY=
+		7mEGMEL7lnsTCZnwgoWTphZGP98=
 		</data>
 		<key>Modules/Starscream.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		T1iijlo02GUzmWG62hf8Fdsa+wQ=
+		+wZV0s/s1ReaMS8rcqp65NFXfeE=
 		</data>
 		<key>Modules/Starscream.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		xfjR3wb4c6GF7KVbUcC3EpPsme8=
+		7RkXsTHAAZW17sPnHjimwg009AA=
 		</data>
 		<key>Modules/Starscream.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
-		K24NETm+obu5fInJr8mWClJoJFI=
+		oqCQzSSXXFqjScTObeC0e0sMbr8=
 		</data>
 		<key>Modules/Starscream.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
 		<data>
-		30o1VQY5scMwYZLQKXil2paqUZA=
+		If/z4ISziWzs12x0VdgFoZPxHd0=
 		</data>
 		<key>Modules/Starscream.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		iliMHvIiAqtmTIj4bBWjXY1i9oY=
+		vZJl/9GCWglNknPMoN6496gUJLc=
 		</data>
 		<key>Modules/Starscream.swiftmodule/i386.swiftdoc</key>
 		<data>
-		K24NETm+obu5fInJr8mWClJoJFI=
+		oqCQzSSXXFqjScTObeC0e0sMbr8=
 		</data>
 		<key>Modules/Starscream.swiftmodule/i386.swiftinterface</key>
 		<data>
-		30o1VQY5scMwYZLQKXil2paqUZA=
+		If/z4ISziWzs12x0VdgFoZPxHd0=
 		</data>
 		<key>Modules/Starscream.swiftmodule/i386.swiftmodule</key>
 		<data>
-		iliMHvIiAqtmTIj4bBWjXY1i9oY=
+		vZJl/9GCWglNknPMoN6496gUJLc=
 		</data>
 		<key>Modules/Starscream.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		hUbPQ6gCT732PBJXmfqx0DSE86I=
+		eCkv+CNHHQI1oKv9Epw71BVkx3M=
 		</data>
 		<key>Modules/Starscream.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		CZReBg6BK0CR/rVxV8wOCT+0RkI=
+		ySp/jyr0YcpIaHVQf74qANPR7F4=
 		</data>
 		<key>Modules/Starscream.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ka3jReEa06rF8LrmzT0LZfxxYds=
+		6dYCAXdvcH/UByizgwV703o7UKs=
 		</data>
 		<key>Modules/Starscream.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		hUbPQ6gCT732PBJXmfqx0DSE86I=
+		eCkv+CNHHQI1oKv9Epw71BVkx3M=
 		</data>
 		<key>Modules/Starscream.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		CZReBg6BK0CR/rVxV8wOCT+0RkI=
+		ySp/jyr0YcpIaHVQf74qANPR7F4=
 		</data>
 		<key>Modules/Starscream.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		ka3jReEa06rF8LrmzT0LZfxxYds=
+		6dYCAXdvcH/UByizgwV703o7UKs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -123,11 +123,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5fF8qFj6hUBGfW1jG2YQdxd76RE=
+			1npiP7Aw7ob84zqOMrrtzTvqxaM=
 			</data>
 			<key>hash2</key>
 			<data>
-			iTqSB5zLzT9DLxQkUSHX0cwpLS3E0Telj4Igfxi4zXc=
+			a73GEDQ4m/Ly+3FZrtKdqtwa6qxkp0eLCUlJIolQtxQ=
 			</data>
 		</dict>
 		<key>Headers/Starscream-umbrella.h</key>
@@ -145,264 +145,264 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VoOMPk8gqIoAGLaikEyiDjMYhUM=
+			kUxmKim+3KrWunWkqFxE6F90sQM=
 			</data>
 			<key>hash2</key>
 			<data>
-			TOGV1BRMCE9o3LWUlZxml0nwIzV0eSYCeVd8qlFHrPw=
+			/4agxhqUz8Hnah7/bbV9eMNwqiDoHgqRQbVYhoCmT4E=
 			</data>
 		</dict>
 		<key>Modules/Starscream.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			VoOMPk8gqIoAGLaikEyiDjMYhUM=
+			kUxmKim+3KrWunWkqFxE6F90sQM=
 			</data>
 			<key>hash2</key>
 			<data>
-			TOGV1BRMCE9o3LWUlZxml0nwIzV0eSYCeVd8qlFHrPw=
+			/4agxhqUz8Hnah7/bbV9eMNwqiDoHgqRQbVYhoCmT4E=
 			</data>
 		</dict>
 		<key>Modules/Starscream.swiftmodule/Project/i386-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TwGJrUukn2DoGHIr+w4088WhwTI=
+			uHEeAmxoDy+XnhhMNAD4dp4OdVg=
 			</data>
 			<key>hash2</key>
 			<data>
-			trZno1WSyJwCfWxL0M8X53FeavGUtYH2zf+a3UB99CI=
+			gWI274ciRenrgvkR23BFCRSoGrqolRvtVhPH/4eMhVI=
 			</data>
 		</dict>
 		<key>Modules/Starscream.swiftmodule/Project/i386.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TwGJrUukn2DoGHIr+w4088WhwTI=
+			uHEeAmxoDy+XnhhMNAD4dp4OdVg=
 			</data>
 			<key>hash2</key>
 			<data>
-			trZno1WSyJwCfWxL0M8X53FeavGUtYH2zf+a3UB99CI=
+			gWI274ciRenrgvkR23BFCRSoGrqolRvtVhPH/4eMhVI=
 			</data>
 		</dict>
 		<key>Modules/Starscream.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			zhCxqedhM6CC6cYUK3tdsGcanJU=
+			UgmLjZTV7I2IFFP757FiNiq1Lz0=
 			</data>
 			<key>hash2</key>
 			<data>
-			Jz8zN9ZersgIrooV+TP/PFEosfk5hR6UjIteYLbcX20=
+			kDbryj4JEC8KkFfDsGKGlZTNEuURT/yK6+ZBzEPbGHs=
 			</data>
 		</dict>
 		<key>Modules/Starscream.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			zhCxqedhM6CC6cYUK3tdsGcanJU=
+			UgmLjZTV7I2IFFP757FiNiq1Lz0=
 			</data>
 			<key>hash2</key>
 			<data>
-			Jz8zN9ZersgIrooV+TP/PFEosfk5hR6UjIteYLbcX20=
+			kDbryj4JEC8KkFfDsGKGlZTNEuURT/yK6+ZBzEPbGHs=
 			</data>
 		</dict>
 		<key>Modules/Starscream.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			VdNbKWZr/tINLaYItIxrKbMKDIY=
+			7mEGMEL7lnsTCZnwgoWTphZGP98=
 			</data>
 			<key>hash2</key>
 			<data>
-			6xVDdGDtn3p0bX2uHtriGp/rV1JyC6Ck45p+N4POqOA=
+			UKoKAWfNeXw8bNuFNgnGyU37xBcoc5wh9lGgkPff75I=
 			</data>
 		</dict>
 		<key>Modules/Starscream.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			T1iijlo02GUzmWG62hf8Fdsa+wQ=
+			+wZV0s/s1ReaMS8rcqp65NFXfeE=
 			</data>
 			<key>hash2</key>
 			<data>
-			n4TtWkj0cP/YUJ0awNNLQtBwiKYQEkErGGI9m3B4uZk=
+			bG98k9m/ie4AXCcHbnYFpzV5HzAk/o5kIRK+1KiUyM0=
 			</data>
 		</dict>
 		<key>Modules/Starscream.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			xfjR3wb4c6GF7KVbUcC3EpPsme8=
+			7RkXsTHAAZW17sPnHjimwg009AA=
 			</data>
 			<key>hash2</key>
 			<data>
-			ipHFjYe5Iza3dMVxHnt3ijpgA8XNNaXcQFwXLFEHcu0=
+			dwsUmJK20wD5HNYBKC4sC7EjvADi6+/dKEaQge4J+dM=
 			</data>
 		</dict>
 		<key>Modules/Starscream.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			VdNbKWZr/tINLaYItIxrKbMKDIY=
+			7mEGMEL7lnsTCZnwgoWTphZGP98=
 			</data>
 			<key>hash2</key>
 			<data>
-			6xVDdGDtn3p0bX2uHtriGp/rV1JyC6Ck45p+N4POqOA=
+			UKoKAWfNeXw8bNuFNgnGyU37xBcoc5wh9lGgkPff75I=
 			</data>
 		</dict>
 		<key>Modules/Starscream.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			T1iijlo02GUzmWG62hf8Fdsa+wQ=
+			+wZV0s/s1ReaMS8rcqp65NFXfeE=
 			</data>
 			<key>hash2</key>
 			<data>
-			n4TtWkj0cP/YUJ0awNNLQtBwiKYQEkErGGI9m3B4uZk=
+			bG98k9m/ie4AXCcHbnYFpzV5HzAk/o5kIRK+1KiUyM0=
 			</data>
 		</dict>
 		<key>Modules/Starscream.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			xfjR3wb4c6GF7KVbUcC3EpPsme8=
+			7RkXsTHAAZW17sPnHjimwg009AA=
 			</data>
 			<key>hash2</key>
 			<data>
-			ipHFjYe5Iza3dMVxHnt3ijpgA8XNNaXcQFwXLFEHcu0=
+			dwsUmJK20wD5HNYBKC4sC7EjvADi6+/dKEaQge4J+dM=
 			</data>
 		</dict>
 		<key>Modules/Starscream.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			K24NETm+obu5fInJr8mWClJoJFI=
+			oqCQzSSXXFqjScTObeC0e0sMbr8=
 			</data>
 			<key>hash2</key>
 			<data>
-			zapCTc+Awk5ipgIjri4UoyRtvrktC3ySswLuUyoaHqo=
+			yCplBnG1GBddI5QDKYcUfAZoVftGxvCHNhmk/q0pxWs=
 			</data>
 		</dict>
 		<key>Modules/Starscream.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			30o1VQY5scMwYZLQKXil2paqUZA=
+			If/z4ISziWzs12x0VdgFoZPxHd0=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZpS8Yz9elCBCQPHXg387btpn71DxHLQCmjNJUgCgHV8=
+			aK2urs1dC1guVQ2mkwch+1gA2XWkLeyqfCeupd7akcM=
 			</data>
 		</dict>
 		<key>Modules/Starscream.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			iliMHvIiAqtmTIj4bBWjXY1i9oY=
+			vZJl/9GCWglNknPMoN6496gUJLc=
 			</data>
 			<key>hash2</key>
 			<data>
-			9nKGHdd9LJKW/o8ilMKvcsvBv/Ws8AXtFK7BMAB2zfU=
+			WgtoS6RNgPN7/R76nd2jxVvuYZvrsiQ0+KPaLpoLuqY=
 			</data>
 		</dict>
 		<key>Modules/Starscream.swiftmodule/i386.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			K24NETm+obu5fInJr8mWClJoJFI=
+			oqCQzSSXXFqjScTObeC0e0sMbr8=
 			</data>
 			<key>hash2</key>
 			<data>
-			zapCTc+Awk5ipgIjri4UoyRtvrktC3ySswLuUyoaHqo=
+			yCplBnG1GBddI5QDKYcUfAZoVftGxvCHNhmk/q0pxWs=
 			</data>
 		</dict>
 		<key>Modules/Starscream.swiftmodule/i386.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			30o1VQY5scMwYZLQKXil2paqUZA=
+			If/z4ISziWzs12x0VdgFoZPxHd0=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZpS8Yz9elCBCQPHXg387btpn71DxHLQCmjNJUgCgHV8=
+			aK2urs1dC1guVQ2mkwch+1gA2XWkLeyqfCeupd7akcM=
 			</data>
 		</dict>
 		<key>Modules/Starscream.swiftmodule/i386.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			iliMHvIiAqtmTIj4bBWjXY1i9oY=
+			vZJl/9GCWglNknPMoN6496gUJLc=
 			</data>
 			<key>hash2</key>
 			<data>
-			9nKGHdd9LJKW/o8ilMKvcsvBv/Ws8AXtFK7BMAB2zfU=
+			WgtoS6RNgPN7/R76nd2jxVvuYZvrsiQ0+KPaLpoLuqY=
 			</data>
 		</dict>
 		<key>Modules/Starscream.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			hUbPQ6gCT732PBJXmfqx0DSE86I=
+			eCkv+CNHHQI1oKv9Epw71BVkx3M=
 			</data>
 			<key>hash2</key>
 			<data>
-			5WQ1dHVqU5uLZkKOU4wgSHRTpdgRMBaJdz6Aew7732A=
+			CctyI+YJysS/yNZx8U1yyAw3MXKHWAcdmWAScjvkOU0=
 			</data>
 		</dict>
 		<key>Modules/Starscream.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			CZReBg6BK0CR/rVxV8wOCT+0RkI=
+			ySp/jyr0YcpIaHVQf74qANPR7F4=
 			</data>
 			<key>hash2</key>
 			<data>
-			tu/yjwUIIG3DKvG59rwx2YxZ5Xu9V3NZljoe9+AHcUI=
+			7zzNyubhYv6lVtZmedOdZZafvalPxfiC3CuX960U/UQ=
 			</data>
 		</dict>
 		<key>Modules/Starscream.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ka3jReEa06rF8LrmzT0LZfxxYds=
+			6dYCAXdvcH/UByizgwV703o7UKs=
 			</data>
 			<key>hash2</key>
 			<data>
-			SP4vyabJn3EboG1m6VSRZEIWJIMuWr+TsmP6hnbRn8U=
+			6G95nhnVEl9KhlyhAGPlMRyHWf69B21cvTlnAtCyHLs=
 			</data>
 		</dict>
 		<key>Modules/Starscream.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			hUbPQ6gCT732PBJXmfqx0DSE86I=
+			eCkv+CNHHQI1oKv9Epw71BVkx3M=
 			</data>
 			<key>hash2</key>
 			<data>
-			5WQ1dHVqU5uLZkKOU4wgSHRTpdgRMBaJdz6Aew7732A=
+			CctyI+YJysS/yNZx8U1yyAw3MXKHWAcdmWAScjvkOU0=
 			</data>
 		</dict>
 		<key>Modules/Starscream.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			CZReBg6BK0CR/rVxV8wOCT+0RkI=
+			ySp/jyr0YcpIaHVQf74qANPR7F4=
 			</data>
 			<key>hash2</key>
 			<data>
-			tu/yjwUIIG3DKvG59rwx2YxZ5Xu9V3NZljoe9+AHcUI=
+			7zzNyubhYv6lVtZmedOdZZafvalPxfiC3CuX960U/UQ=
 			</data>
 		</dict>
 		<key>Modules/Starscream.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ka3jReEa06rF8LrmzT0LZfxxYds=
+			6dYCAXdvcH/UByizgwV703o7UKs=
 			</data>
 			<key>hash2</key>
 			<data>
-			SP4vyabJn3EboG1m6VSRZEIWJIMuWr+TsmP6hnbRn8U=
+			6G95nhnVEl9KhlyhAGPlMRyHWf69B21cvTlnAtCyHLs=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

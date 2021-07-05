@@ -53,6 +53,9 @@ typedef void (^RZGMSSendChannelMessageBlock)(RZGMSSendChannelMessageErrorCode er
  */
 - (void)channel:(RZGMSChannel *)channel memberLeft:(RZGMSMember *)member;
 
+
+- (void)channel:(RZGMSChannel *)channel memberLeft:(RZGMSMember *)member reason:(RZGMSMemberLeaveChannelReason)reason;
+
 /**
  Occurs when receiving a channel message.
  
