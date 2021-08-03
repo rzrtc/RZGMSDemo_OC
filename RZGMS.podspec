@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.summary      = "RZGMS"
   s.description  = "认真 GMS 的实时消息服务，cocoapods线上版本"
 
-  s.homepage     = "https://github.com/duobeiyun/RZGMSDemo_OC.git"
+  s.homepage     = "https://github.com/rzrtc/RZGMSDemo_OC.git"
   s.license      = {
     :type => 'Copyright',
     :text => <<-LICENSE
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   s.swift_versions = '5.0'
   s.ios.deployment_target = '9.0'
   s.author       = { "xiaobing" => "xiaobing.yao@duobei.com" }
-  s.source       = { :git => "https://github.com/duobeiyun/RZGMSDemo_OC.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/rzrtc/RZGMSDemo_OC.git", :tag => "#{s.version}" }
   s.vendored_frameworks  = "frameworks/RZGMS.xcframework", "frameworks/SocketIO.xcframework", "frameworks/Starscream.xcframework"
   
 end
