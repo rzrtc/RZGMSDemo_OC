@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.summary      = "Starscream"
   s.description  = "认真 GMS 依赖的Starscream"
 
-  s.homepage     = "https://github.com/duobeiyun/RZGMSDemo_OC.git"
+  s.homepage     = "https://github.com/rzrtc/RZGMSDemo_OC.git"
   s.license      = {
     :type => 'Copyright',
     :text => <<-LICENSE
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.swift_versions = '5.0'
   s.ios.deployment_target = '9.0'
   s.author       = { "zhongfan" => "fan.zhong@duobei.com" }
-  s.source       = { :git => "https://github.com/duobeiyun/RZGMSDemo_OC.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/rzrtc/RZGMSDemo_OC.git", :tag => "#{s.version}" }
   s.vendored_frameworks  = "xcStarscream.framework"
   
 end
