@@ -30,7 +30,7 @@
 		</data>
 		<key>Headers/RZGMSEnvConfig.h</key>
 		<data>
-		nFUcudv/GLgezoeZ30MU9s99Uc0=
+		XqSnidcFhf/Vkbt8jlxhrk205Os=
 		</data>
 		<key>Headers/RZGMSInvitationKit.h</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		GPGst6LuG75W40X8toWPKW9hdSs=
+		zbXYVz3hvVktrBCIu7dELDcbW1A=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -86,7 +86,7 @@
 		</data>
 		<key>PrivateHeaders/RZGMSChannel+RZGMS.h</key>
 		<data>
-		YquSpBlxIuwIXt5bWXQV/3QUNv0=
+		agt3UPXZ4oegyVw4lTe3sPzLHKs=
 		</data>
 		<key>PrivateHeaders/RZGMSDebugInfo.h</key>
 		<data>
@@ -173,11 +173,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			nFUcudv/GLgezoeZ30MU9s99Uc0=
+			XqSnidcFhf/Vkbt8jlxhrk205Os=
 			</data>
 			<key>hash2</key>
 			<data>
-			ekKaRXbnelL/VFPhZeCOZAkADK8nh5mzPcTo0NyWwac=
+			NHB9n0djmmBdB8kQlaXqxv0zF00zjJz8jAqeHpltwxs=
 			</data>
 		</dict>
 		<key>Headers/RZGMSInvitationKit.h</key>
@@ -316,11 +316,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			YquSpBlxIuwIXt5bWXQV/3QUNv0=
+			agt3UPXZ4oegyVw4lTe3sPzLHKs=
 			</data>
 			<key>hash2</key>
 			<data>
-			loeAU8DZweNn0LYx/byUnX1N2V1nh9NYKML8AA9LIpU=
+			k+91P17F+C82xTqJDrgpv7qq+PnLjQ+LVHccFOd/Q0E=
 			</data>
 		</dict>
 		<key>PrivateHeaders/RZGMSDebugInfo.h</key>

@@ -17,6 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
  http://192.168.1.1
  */
 @property (copy, nonatomic, nullable) NSString *apiServer;
+/**
+ 日志上报服务器地址
+ */
+@property (copy, nonatomic, nullable) NSString *logServer;
 
 @end
 

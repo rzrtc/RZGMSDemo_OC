@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
 // swift-module-flags: -target arm64-apple-ios9.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Starscream
 import CommonCrypto
 import CoreFoundation
@@ -7,6 +7,7 @@ import Foundation
 import Security
 @_exported import Starscream
 import Swift
+import _Concurrency
 import zlib
 public struct SSLClientCertificateError : Foundation.LocalizedError {
   public var errorDescription: Swift.String?
@@ -92,7 +93,7 @@ public protocol WebSocketClient : AnyObject {
   func write(ping: Foundation.Data, completion: (() -> ())?)
   func write(pong: Foundation.Data, completion: (() -> ())?)
 }
-extension WebSocketClient {
+extension Starscream.WebSocketClient {
   public func write(string: Swift.String)
   public func write(data: Foundation.Data)
   public func write(ping: Foundation.Data)
@@ -207,7 +208,6 @@ public protocol WebSocketAdvancedDelegate : AnyObject {
   public func newBytesInStream()
   public func streamDidError(error: Swift.Error?)
   @objc deinit
-  @objc override dynamic public init()
 }
 extension Starscream.CloseCode : Swift.Equatable {}
 extension Starscream.CloseCode : Swift.Hashable {}

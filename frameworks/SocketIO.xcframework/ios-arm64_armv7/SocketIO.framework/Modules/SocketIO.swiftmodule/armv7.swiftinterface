@@ -1,11 +1,12 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
 // swift-module-flags: -target armv7-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SocketIO
 import Dispatch
 import Foundation
 @_exported import SocketIO
 import Starscream
 import Swift
+import _Concurrency
 @objc final public class SocketAckEmitter : ObjectiveC.NSObject {
   @objc final public var rawEmitView: SocketIO.SocketRawAckView {
     @objc get
@@ -16,13 +17,11 @@ import Swift
   public init(socket: SocketIO.SocketIOClient, ackNum: Swift.Int)
   final public func with(_ items: SocketIO.SocketData...)
   @objc final public func with(_ items: [Any])
-  @objc override dynamic public init()
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers final public class OnAckCallback : ObjectiveC.NSObject {
   @objc deinit
   @objc final public func timingOut(after seconds: Swift.Double, callback: @escaping SocketIO.AckCallback)
-  @objc override dynamic public init()
 }
 public enum SocketAckStatus : Swift.String {
   case noAck
@@ -38,7 +37,6 @@ public enum SocketAckStatus : Swift.String {
   @objc override final public var description: Swift.String {
     @objc get
   }
-  @objc override dynamic public init()
   @objc deinit
 }
 @objc open class SocketEngine : ObjectiveC.NSObject, Foundation.URLSessionDelegate, SocketIO.SocketEnginePollable, SocketIO.SocketEngineWebsocket, SocketIO.ConfigSettable {
@@ -119,9 +117,8 @@ public enum SocketAckStatus : Swift.String {
   @objc open func parseEngineMessage(_ message: Swift.String)
   open func setConfigs(_ config: SocketIO.SocketIOClientConfiguration)
   @objc open func write(_ msg: Swift.String, withType type: SocketIO.SocketEnginePacketType, withData data: [Foundation.Data], completion: (() -> ())? = nil)
-  @objc override dynamic public init()
 }
-extension SocketEngine {
+extension SocketIO.SocketEngine {
   public func URLSession(session: Foundation.URLSession, didBecomeInvalidWithError error: Foundation.NSError?)
 }
 @objc public protocol SocketEngineClient {
@@ -158,7 +155,7 @@ public protocol SocketEnginePollable : SocketIO.SocketEngineSpec {
   func sendPollMessage(_ message: Swift.String, withType type: SocketIO.SocketEnginePacketType, withData datas: [Foundation.Data], completion: (() -> ())?)
   func stopPolling()
 }
-extension SocketEnginePollable {
+extension SocketIO.SocketEnginePollable {
   public func doPoll()
   public func sendPollMessage(_ message: Swift.String, withType type: SocketIO.SocketEnginePacketType, withData datas: [Foundation.Data], completion: (() -> ())? = nil)
   public func stopPolling()
@@ -197,7 +194,7 @@ extension SocketEnginePollable {
 public protocol SocketEngineWebsocket : SocketIO.SocketEngineSpec {
   func sendWebSocketMessage(_ str: Swift.String, withType type: SocketIO.SocketEnginePacketType, withData datas: [Foundation.Data], completion: (() -> ())?)
 }
-extension SocketEngineWebsocket {
+extension SocketIO.SocketEngineWebsocket {
   public func sendWebSocketMessage(_ str: Swift.String, withType type: SocketIO.SocketEnginePacketType, withData data: [Foundation.Data], completion: (() -> ())?)
 }
 public struct SocketEventHandler {
@@ -206,7 +203,7 @@ public struct SocketEventHandler {
   public let callback: SocketIO.NormalCallback
   public func executeCallback(with items: [Any], withAck ack: Swift.Int, withSocket socket: SocketIO.SocketIOClient)
 }
-extension Dictionary where Key == Swift.String, Value == Any {
+extension Swift.Dictionary where Key == Swift.String, Value == Any {
   public func toSocketConfiguration() -> SocketIO.SocketIOClientConfiguration
 }
 @objc open class SocketIOClient : ObjectiveC.NSObject, SocketIO.SocketIOClientSpec {
@@ -264,7 +261,6 @@ extension Dictionary where Key == Swift.String, Value == Any {
   @objc open func reconnect()
   @objc open func removeAllHandlers()
   @objc open func setReconnecting(reason: Swift.String)
-  @objc override dynamic public init()
 }
 public struct SocketIOClientConfiguration : Swift.ExpressibleByArrayLiteral, Swift.Collection, Swift.MutableCollection {
   public typealias Element = SocketIO.SocketIOClientOption
@@ -364,7 +360,7 @@ public protocol SocketIOClientSpec : AnyObject {
   func removeAllHandlers()
   func setReconnecting(reason: Swift.String)
 }
-extension SocketIOClientSpec {
+extension SocketIO.SocketIOClientSpec {
   public func didError(reason: Swift.String)
 }
 public enum SocketClientEvent : Swift.String {
@@ -405,7 +401,7 @@ public protocol SocketLogger : AnyObject {
   func log(_ message: @autoclosure () -> Swift.String, type: Swift.String)
   func error(_ message: @autoclosure () -> Swift.String, type: Swift.String)
 }
-extension SocketLogger {
+extension SocketIO.SocketLogger {
   public func log(_ message: @autoclosure () -> Swift.String, type: Swift.String)
   public func error(_ message: @autoclosure () -> Swift.String, type: Swift.String)
 }
@@ -455,7 +451,6 @@ extension SocketLogger {
   @objc open func removeSocket(_ socket: SocketIO.SocketIOClient) -> SocketIO.SocketIOClient?
   open func setConfigs(_ config: SocketIO.SocketIOClientConfiguration)
   @objc open func socket(forNamespace nsp: Swift.String) -> SocketIO.SocketIOClient
-  @objc override dynamic public init()
 }
 @objc public protocol SocketManagerSpec : SocketIO.SocketEngineClient {
   @objc var defaultSocket: SocketIO.SocketIOClient { get }
@@ -504,7 +499,7 @@ public struct SocketPacket : Swift.CustomStringConvertible {
     get
   }
 }
-extension SocketPacket {
+extension SocketIO.SocketPacket {
   public enum PacketType : Swift.Int {
     case connect
     case disconnect
@@ -540,7 +535,7 @@ public enum SocketParsableError : Swift.Error {
 public protocol SocketDataBufferable : AnyObject {
   var waitingPackets: [SocketIO.SocketPacket] { get set }
 }
-extension SocketParsable where Self : SocketIO.SocketDataBufferable, Self : SocketIO.SocketManagerSpec {
+extension SocketIO.SocketParsable where Self : SocketIO.SocketDataBufferable, Self : SocketIO.SocketManagerSpec {
   public func parseSocketMessage(_ message: Swift.String) -> SocketIO.SocketPacket?
   public func parseBinaryData(_ data: Foundation.Data) -> SocketIO.SocketPacket?
 }
@@ -549,44 +544,42 @@ extension SocketParsable where Self : SocketIO.SocketDataBufferable, Self : Sock
   @objc final public func emit(_ event: Swift.String, with items: [Any])
   final public func emitWithAck(_ event: Swift.String, _ items: SocketIO.SocketData...) -> SocketIO.OnAckCallback
   @objc final public func emitWithAck(_ event: Swift.String, with items: [Any]) -> SocketIO.OnAckCallback
-  @objc override dynamic public init()
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers final public class SocketRawAckView : ObjectiveC.NSObject {
   final public func with(_ items: SocketIO.SocketData...)
   @objc final public func with(_ items: [Any])
-  @objc override dynamic public init()
   @objc deinit
 }
 public protocol SocketData {
   func socketRepresentation() throws -> SocketIO.SocketData
 }
-extension SocketData {
+extension SocketIO.SocketData {
   public func socketRepresentation() -> SocketIO.SocketData
 }
-extension Array : SocketIO.SocketData {
+extension Swift.Array : SocketIO.SocketData {
 }
-extension Bool : SocketIO.SocketData {
+extension Swift.Bool : SocketIO.SocketData {
 }
-extension Dictionary : SocketIO.SocketData {
+extension Swift.Dictionary : SocketIO.SocketData {
 }
-extension Double : SocketIO.SocketData {
+extension Swift.Double : SocketIO.SocketData {
 }
-extension Int : SocketIO.SocketData {
+extension Swift.Int : SocketIO.SocketData {
 }
-extension NSArray : SocketIO.SocketData {
+extension Foundation.NSArray : SocketIO.SocketData {
 }
-extension Data : SocketIO.SocketData {
+extension Foundation.Data : SocketIO.SocketData {
 }
-extension NSData : SocketIO.SocketData {
+extension Foundation.NSData : SocketIO.SocketData {
 }
-extension NSDictionary : SocketIO.SocketData {
+extension Foundation.NSDictionary : SocketIO.SocketData {
 }
-extension NSString : SocketIO.SocketData {
+extension Foundation.NSString : SocketIO.SocketData {
 }
-extension NSNull : SocketIO.SocketData {
+extension Foundation.NSNull : SocketIO.SocketData {
 }
-extension String : SocketIO.SocketData {
+extension Swift.String : SocketIO.SocketData {
 }
 public typealias AckCallback = ([Any]) -> ()
 public typealias NormalCallback = ([Any], SocketIO.SocketAckEmitter) -> ()
@@ -596,7 +589,6 @@ public typealias Post = (msg: Swift.String, completion: (() -> ())?)
   @objc convenience public init(usePublicKeys: Swift.Bool = true)
   convenience public init(certs: [Starscream.SSLCert], usePublicKeys: Swift.Bool)
   public func isValid(_ trust: Security.SecTrust, domain: Swift.String?) -> Swift.Bool
-  @objc override dynamic public init()
   @objc deinit
 }
 extension SocketIO.SocketAckStatus : Swift.Equatable {}
